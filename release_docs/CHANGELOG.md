@@ -2,6 +2,8 @@
 
 ## v0.9 -- 2026-10-25
 
+- Header-compatibility update: the patch now accepts both the canonical source (CRC32 1D040BE8) and the identical game dump with zeroed extended-header metadata (CRC32 82804748). Both produce the unchanged approved English ROM. Verified with native xdelta and the published web-patcher decoder, with checksum validation enabled. Redownload the patch and matching checksum attachment if the first v0.9 patch reported a target-window mismatch on the alternate header.
+
 - Publishes the merged story/meaning/style, overflow, description, terminology and graphics work summarized below as a patch against the clean Japanese revision-0 ROM.
 - Includes the gold support-badge correction and Iczer-1 crash fix; Action-tab and tab-ghost fixes; UI sweep 2 wording/spacing; and the all-song BGM title guard.
 - Includes the newly translated Japanese-based opening narration and history graphics, approved in-game.

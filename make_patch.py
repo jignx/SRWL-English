@@ -13,6 +13,8 @@ import zlib
 
 SOURCE_SIZE = 134217728
 SOURCE_SHA256 = "a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f"
+ALTERNATE_SHA256 = "1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f"
+EXTENDED_METADATA = ((0x33c, 0x350), (0x378, 0x3a0), (0xf80, 0x1000))
 
 
 def digest(path):
@@ -56,34 +58,53 @@ def main(argv=None):
             raise ValueError("Checksum manifest already exists.")
         with tempfile.TemporaryDirectory(prefix="srwl_patch_") as folder:
             patch = Path(folder) / "release.xdelta"
-            verified = Path(folder) / "verified.nds"
             clean_copy = Path(folder) / "clean.nds"
             shutil.copyfile(source, clean_copy)
             assert digest(clean_copy) == digest(source)
+            alternate = Path(folder) / "zeroed-header.nds"
+            raw = bytearray(source.read_bytes())
+            for start, end in EXTENDED_METADATA:
+                raw[start:end] = bytes(end - start)
+            alternate.write_bytes(raw)
+            if digest(alternate)[0] != ALTERNATE_SHA256:
+                raise ValueError("Known alternate-header source guard failed.")
+            # Encode without relying on either dump's header metadata.
+            encoding_source = Path(folder) / "encoding-source.nds"
+            raw[:4096] = bytes([0xa5]) * 4096
+            encoding_source.write_bytes(raw)
+            source_entries = []
+            for label, path in (("Clean Japanese ROM", clean_copy),
+                                ("Japanese ROM with zeroed extended-header metadata", alternate)):
+                sha, crc = digest(path)
+                source_entries.append((label + " (not distributed)", path.name, path.stat().st_size, sha, crc))
             help_text = subprocess.run([executable, "-h"], capture_output=True, text=True).stdout
             help_text += subprocess.run([executable, "-h"], capture_output=True, text=True).stderr
             # xdelta 3.2 defaults to armor. Disable it for legacy VCDIFF patchers.
             legacy = ["-a"] if "disable armor" in help_text else []
             subprocess.run([executable, *legacy, "-A", "-S", args.secondary, "-9", "-e", "-s",
-                            str(source), str(built), str(patch)], check=True)
+                            str(encoding_source), str(built), str(patch)], check=True)
             if patch.read_bytes()[:4] != b"\xd6\xc3\xc4\0":
                 raise ValueError("Output is not a standard VCDIFF patch.")
-            subprocess.run([executable, "-d", "-s", str(clean_copy), str(patch), str(verified)], check=True)
-            if verified.stat().st_size != built.stat().st_size or digest(verified) != digest(built):
-                raise ValueError("Patch verification failed.")
+            for index, candidate in enumerate((clean_copy, alternate)):
+                verified = Path(folder) / f"verified-{index}.nds"
+                subprocess.run([executable, "-d", "-s", str(candidate), str(patch), str(verified)], check=True)
+                if verified.stat().st_size != built.stat().st_size or digest(verified) != digest(built):
+                    raise ValueError("Patch verification failed for a supported source header.")
             # Exclusive creation prevents overwriting an existing release.
             with output.open("xb") as destination, patch.open("rb") as stream:
                 shutil.copyfileobj(stream, destination)
         if args.checksums:
-            lines = ["Super Robot Taisen L English v0.9", "", "Patch reapplication: PASS (fresh source copy; SHA-256 and CRC32 match build)", ""]
-            for label, name, path in (("Clean Japanese ROM (not distributed)", "clean-jp.nds", source),
-                                      ("Translation patch", output.name, output),
+            lines = ["Super Robot Taisen L English v0.9 -- header compatibility update", "", "Patch reapplication: PASS for both supported source headers; output unchanged", ""]
+            entries = list(source_entries)
+            for label, name, path in (("Translation patch", output.name, output),
                                       ("Patched ROM (not distributed)", "SRWL_English_v0.9.nds", built)):
                 sha, crc = digest(path)
-                lines.extend([label + ": " + name, "Size: " + str(path.stat().st_size) + " bytes",
+                entries.append((label, name, path.stat().st_size, sha, crc))
+            for label, name, size, sha, crc in entries:
+                lines.extend([label + ": " + name, "Size: " + str(size) + " bytes",
                               "SHA-256: " + sha, "CRC32: " + crc, ""])
             args.checksums.write_text("\n".join(lines), encoding="utf8", newline="\n")
-        print("Patch created and verified.")
+        print("Patch created and verified against both supported source headers.")
         return 0
     except (OSError, ValueError, subprocess.CalledProcessError) as exc:
         parser.exit(1, f"error: {exc}\n")

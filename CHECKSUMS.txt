@@ -1,16 +1,21 @@
-Super Robot Taisen L English v0.9
+Super Robot Taisen L English v0.9 -- header compatibility update
 
-Patch reapplication: PASS (fresh source copy; SHA-256 and CRC32 match build)
+Patch reapplication: PASS for both supported source headers; output unchanged
 
-Clean Japanese ROM (not distributed): clean-jp.nds
+Clean Japanese ROM (not distributed): clean.nds
 Size: 134217728 bytes
 SHA-256: a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f
 CRC32: 1D040BE8
 
+Japanese ROM with zeroed extended-header metadata (not distributed): zeroed-header.nds
+Size: 134217728 bytes
+SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
+CRC32: 82804748
+
 Translation patch: SRWL_English_v0.9.xdelta
-Size: 61275558 bytes
-SHA-256: 2f8ec2d531168fb3a3a198286a3aec092415571114083e0f9ea00f10aac35900
-CRC32: 3DF005E5
+Size: 61276014 bytes
+SHA-256: e68811e68b23aff42bb66eadf8ac9fc2cb82b6c7c58bb3e881eb0be09b4e98d3
+CRC32: 15064AEF
 
 Patched ROM (not distributed): SRWL_English_v0.9.nds
 Size: 234292908 bytes

@@ -25,11 +25,19 @@ Use a clean, untrimmed, unpatched Japanese ROM, game code **BRWJ**, revision 0.
 - SHA-256: `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`
 - SHA-1: `f97ecb45c0313a44b15fdfed585ef4d5f32c4062`
 
-The source CRC32 and all patch/output hashes are in [CHECKSUMS.txt](CHECKSUMS.txt). Stop if your source does not match.
+The updated v0.9 patch also accepts the otherwise-identical dump with zeroed extended-header metadata:
+
+- SHA-256: `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f`
+- CRC32: `82804748`
+- Size: **134,217,728 bytes**
+
+Only 188 extended-header bytes differ; the game data is identical. Both sources produce the exact same English ROM. If you encountered **target window checksum mismatch** with this variant, download the updated patch and checksums together from Releases. Do not disable checksum validation.
+
+All source, patch and output hashes are in [CHECKSUMS.txt](CHECKSUMS.txt). Stop if your source matches neither supported hash.
 
 ## How to patch
 
-1. Verify your clean ROM's SHA-256 against the value above.
+1. Verify your source ROM's SHA-256 against either supported value above.
 2. Open an xdelta-compatible patcher such as Delta Patcher. Choose your clean ROM as **Original file** and `SRWL_English_v0.9.xdelta` as **Patch**.
 3. Apply to a new output file. Keep your clean ROM unchanged.
 4. Verify the patched ROM's SHA-256 and CRC32 against `CHECKSUMS.txt`.
@@ -45,7 +53,7 @@ Patched ROM SHA-256: `8caaa39d45c18d532a2b5cb0115bb3dbc0f8487d6fa1d4fca22493b3fa
 
 ## Validation and known limits
 
-The release patch was applied to a fresh copy of the clean ROM; the result matches the build's SHA-256 and CRC32. The build has **0 insertion errors**, passes **12/12 overlay guards** and current engine-source verification, and cold-boots in DeSmuME QA. Narration screenshots match the game's renderer exactly; the history scroll was reached with a native scene-entry fixture.
+The release patch was applied to fresh copies of both supported ROM headers and independently checked with the published xdelta-wasm web decoder, with checksums enabled. Both results match the build's SHA-256 and CRC32. The build has **0 insertion errors**, passes **12/12 overlay guards** and current engine-source verification, and cold-boots in DeSmuME QA. Narration screenshots match the game's renderer exactly; the history scroll was reached with a native scene-entry fixture.
 
 Standalone tests: **99 modules / 583 tests**. The three known exceptions are `test_engine_source`, `test_spirit_marker_fix` and `test_text_presence`; all other modules pass. The legacy story-fit diagnostic remains at **4,073**, so this is not a claim of zero clipping or a complete route-by-route playthrough.
 

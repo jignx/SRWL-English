@@ -17,6 +17,26 @@ An unofficial English fan translation for **Super Robot Taisen L** on Nintendo D
 
 Get `SRWL_English_v0.9.xdelta` and `CHECKSUMS.txt` from the **v0.9** release on this repository's Releases page. No prepatched ROM is supplied.
 
+## Screenshots
+
+Captured in DeSmuME, showing both Nintendo DS screens at their original resolution.
+
+| Title screen | Opening narration |
+| --- | --- |
+| ![English title screen and main menu](screenshots/title-screen.png) | ![Original English opening narration](screenshots/opening-narration.png) |
+
+| Scenario title | Story dialogue |
+| --- | --- |
+| ![English Scenario 3 title card](screenshots/scenario-title.png) | ![English story dialogue between Cobalt and Sepia](screenshots/story-dialogue.png) |
+
+| Weapon selection | Attack dialogue |
+| --- | --- |
+| ![English weapon selection and Dancouga Nova stats](screenshots/weapon-selection.png) | ![Johnny calling Dancou Cannon during an attack](screenshots/attack-dialogue.png) |
+
+| Pilot cut-in | Battle animation |
+| --- | --- |
+| ![Goh's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Alto's battle animation and English dialogue](screenshots/battle-animation.png) |
+
 ## Required clean source
 
 Use a clean, untrimmed, unpatched Japanese ROM, game code **BRWJ**, revision 0.

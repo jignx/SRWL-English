@@ -22,6 +22,8 @@ The patch generator now avoids depending on the source's first 4 KiB. Its privat
 
 The old patch reproduces the reported `-17712` failure on the alternate source in the web decoder. The updated generator reproduces the independently tested compatibility patch exactly.
 
+The independent decoder check is reproducible with `tools/verify_web_patch.mjs` and the upstream [xdelta-wasm](https://github.com/kotcrab/xdelta-wasm) decoder. Supply its JavaScript/WASM files, your source ROM, the patch and the expected output SHA-256. The helper keeps checksum validation enabled and hashes the streamed output; no decoder binaries or ROMs are bundled.
+
 Updated patch SHA-256: `e68811e68b23aff42bb66eadf8ac9fc2cb82b6c7c58bb3e881eb0be09b4e98d3`.
 
 Both inputs produce the unchanged approved English ROM, 234292908 bytes:

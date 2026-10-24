@@ -23,10 +23,6 @@ It's version 0.9 right now on release, I would happily update it to version 1.0 
 - Build-time checks that catch any text that would spill out of its box
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
-## Download
-
-Get `SRWL_English_v0.9.xdelta` and `CHECKSUMS.txt` from the **v0.9** release on this repository's Releases page. No prepatched ROM is supplied.
-
 ## Screenshots
 
 Captured in DeSmuME, showing both Nintendo DS screens at their original resolution.
@@ -47,54 +43,32 @@ Captured in DeSmuME, showing both Nintendo DS screens at their original resoluti
 | --- | --- |
 | ![Goh's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Alto's battle animation and English dialogue](screenshots/battle-animation.png) |
 
-## Required clean source
-
-Use a clean, untrimmed, unpatched Japanese ROM, game code **BRWJ**, revision 0.
-
-- Size: **134,217,728 bytes**
-- SHA-256: `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`
-- SHA-1: `f97ecb45c0313a44b15fdfed585ef4d5f32c4062`
-
-The updated v0.9 patch also accepts the otherwise-identical dump with zeroed extended-header metadata:
-
-- SHA-256: `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f`
-- CRC32: `82804748`
-- Size: **134,217,728 bytes**
-
-Only 188 extended-header bytes differ; the game data is identical. Both sources produce the exact same English ROM. If you encountered **target window checksum mismatch** with this variant, download the updated patch and checksums together from Releases. Do not disable checksum validation.
-
-All source, patch and output hashes are in [CHECKSUMS.txt](CHECKSUMS.txt). Stop if your source matches neither supported hash.
-
+## Download
+Grab `SRWL_English_v0.9.xdelta` and `CHECKSUMS.txt` from the [Releases page](../../releases). No pre-patched ROMs, please don't ask.
+## Screenshots
+(keep your tables; one alt text fix: "Original English opening narration" → "English opening narration")
+## What you need
+A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known and both work:
+- SHA-256 `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`
+- SHA-256 `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f` (same game, only the header differs)
+If yours matches neither, the patch won't apply. If you got a "target window checksum mismatch" error with an older download, grab the patch again.
 ## How to patch
-
-1. Verify your source ROM's SHA-256 against either supported value above.
-2. Open an xdelta-compatible patcher such as Delta Patcher. Choose your clean ROM as **Original file** and `SRWL_English_v0.9.xdelta` as **Patch**.
-3. Apply to a new output file. Keep your clean ROM unchanged.
-4. Verify the patched ROM's SHA-256 and CRC32 against `CHECKSUMS.txt`.
-5. Back up your battery save, then cold boot the patched ROM. Avoid loading an old emulator save state after changing patches; it can retain old code and graphics.
-
-Command-line alternative:
-
+1. Check your ROM's SHA-256 against one of the hashes above.
+2. Open Delta Patcher (or any xdelta patcher). Pick your ROM as **Original file** and the .xdelta as **Patch**, and save to a new file.
+3. Optional: check the patched ROM against `CHECKSUMS.txt`. It should be `8caaa39d45c18d532a2b5cb0115bb3dbc0f8487d6fa1d4fca22493b3fab762b2`.
+4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
+Command line:
 ```sh
 xdelta3 -d -s clean-jp.nds SRWL_English_v0.9.xdelta SRWL_English_v0.9.nds
 ```
-
-Patched ROM SHA-256: `8caaa39d45c18d532a2b5cb0115bb3dbc0f8487d6fa1d4fca22493b3fab762b2`.
-
-## Validation and known limits
-
-The release patch was applied to fresh copies of both supported ROM headers and independently checked with the published xdelta-wasm web decoder, with checksums enabled. Both results match the build's SHA-256 and CRC32. The build has **0 insertion errors**, passes **12/12 overlay guards** and current engine-source verification, and cold-boots in DeSmuME QA. Narration screenshots match the game's renderer exactly; the history scroll was reached with a native scene-entry fixture.
-
-Standalone tests: **99 modules / 583 tests**. The three known exceptions are `test_engine_source`, `test_spirit_marker_fix` and `test_text_presence`; all other modules pass. The legacy story-fit diagnostic remains at **4,073**, so this is not a claim of zero clipping or a complete route-by-route playthrough.
-
-Some narrow labels, rare UI layouts, long names and alternate routes still need playtesting. The English ending staff roll remains disabled pending genuine ending-continuation verification; boot copyright screens are translated. Hardware and every route have not been comprehensively verified.
-
-See [playtesting and bug reports](release_docs/PLAYTESTING.md) and the [changelog](release_docs/CHANGELOG.md).
-
+## Known issues
+- The ending staff credits are still in Japanese (the translation is done, it just needs an ending save to test).
+- The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
+- Tested in DeSmuME. Real hardware hasn't been checked.
+Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please attach a save. Changes are in the [changelog](release_docs/CHANGELOG.md).
 ## Credits
-
-Thanks to the translation, engineering, editing and playtesting contributors; the Sol and DeepSeek passes; Akurasu for terminology/context; and the emulator, xdelta and font authors. This project used AI assistance, including Codex, Claude and DeepSeek, with human review and playtesting. The two narration replacements are newly translated from Japanese.
-
-Font acknowledgements: GohuFont by Hugo Chargois (WTFPL), with a project proportional adaptation; Roboto Condensed by the Roboto Project Authors (SIL Open Font License 1.1), used for raster lettering. Original game, artwork, music and character rights belong to their respective rights holders. This project is not affiliated with or endorsed by those rights holders.
-
-Do not upload or redistribute source/patched ROMs or original game assets.
+- Translation and testing: Jignx, with AI help from ChatGPT (Codex), Claude and DeepSeek. Every change was checked in-game by hand.
+- Terminology reference: Akurasu
+- Fonts: GohuFont by Hugo Chargois (WTFPL), adapted to a proportional font; Roboto Condensed by the Roboto Project Authors (SIL OFL 1.1)
+- Tools: DeSmuME, xdelta
+Super Robot Taisen L and all its characters, art and music belong to their respective rights holders. This project isn't affiliated with or endorsed by them. Please don't share ROMs or pre-patched games.

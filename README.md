@@ -13,9 +13,10 @@ While the game has been fully translated from what I could explore and find, it 
 It's version 0.9 right now on release, I would happily update it to version 1.0 once I hear from other people beating the game before I could confidently say it's complete at 1.0
 
 ## Features
-- Full English translation of the story, battle quotes, and unit, weapon, pilot and ability descriptions, with a story-wide consistency audit
-- Official English name spellings for series, characters and mechs where they exist
-- Terms familiar from other SRW games: Will, Valor, Spirit, CQB / RNG / SKL
+- Full English translation of the story, battle quotes, and unit, weapon, pilot and ability descriptions, with a story-wide consistency audit 
+- Translation has been checked to consistently keep within each series setting, lore and personality to ensure that the writing consistently captured the personality of the characters in the game. 
+- Official English name spellings for series, characters and mechs where they exist using Akurasu, Fansubs and Wiki as a source
+- Terms familiar from other official SRW games like VTX30Y: Will, Valor, Spirit, CQB / RNG / SKL
 - Menus and UI fitted to the screen, with labels sized and aligned to match the original layout
 - Translated graphics: title and copyright screens, terrain icons, battle badges such as Support Attack
 - Battle menu cleaned up: full Action / Counter / Defend / Evade tabs

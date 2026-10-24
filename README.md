@@ -18,9 +18,7 @@ It's version 0.9 right now on release, I would happily update it to version 1.0 
 - Terms familiar from other SRW games: Will, Valor, Spirit, CQB / RNG / SKL
 - Menus and UI fitted to the screen, with labels sized and aligned to match the original layout
 - Translated graphics: title and copyright screens, terrain icons, battle badges such as Support Attack
-- Battle forecast cleaned up: full Action / Counter / Defend / Evade tabs, and unit cards that never overflow (long names get short forms on that screen only)
-- All 39 BGM titles translated and fitted to the sound menu
-- Build-time checks that catch any text that would spill out of its box
+- Battle menu cleaned up: full Action / Counter / Defend / Evade tabs
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
 ## Download

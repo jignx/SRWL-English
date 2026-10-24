@@ -23,8 +23,9 @@ It's version 0.9 right now on release, I would happily update it to version 1.0 
 - Build-time checks that catch any text that would spill out of its box
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
+## Download
+Grab `SRWL_English_v0.9.xdelta` and `CHECKSUMS.txt` from the [Releases page](../../releases). No pre-patched ROMs, please don't ask.
 ## Screenshots
-
 Captured in DeSmuME, showing both Nintendo DS screens at their original resolution.
 
 | Title screen | Opening narration |
@@ -43,10 +44,6 @@ Captured in DeSmuME, showing both Nintendo DS screens at their original resoluti
 | --- | --- |
 | ![Goh's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Alto's battle animation and English dialogue](screenshots/battle-animation.png) |
 
-## Download
-Grab `SRWL_English_v0.9.xdelta` and `CHECKSUMS.txt` from the [Releases page](../../releases). No pre-patched ROMs, please don't ask.
-## Screenshots
-(keep your tables; one alt text fix: "Original English opening narration" → "English opening narration")
 ## What you need
 A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known and both work:
 - SHA-256 `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`

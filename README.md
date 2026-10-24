@@ -3,13 +3,15 @@
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only an xdelta patch, checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
 
 ## Features
-
-- English story, battle dialogue, names, weapons, mission objectives and menus, with meaning/style reviews across stages 1--41 and alternate routes.
-- Proportional English lettering and many translated graphic labels, series plates, pilot-name pictures, all 55 stage cards, title and boot copyright screens.
-- Fresh Japanese-based translations of the opening narration and pre-Chapter 1 history, approved in-game.
-- Gold English support attack/defend badges, with the Iczer-1 attack regression corrected.
-- UI sweep fixes for Predict, support values, Potential levels, unit-panel spacing, Skill Parts and BGM layout. The BGM guard checks all 39 entries / 37 songs, including Godannar.
-- Updated Will, Valor and Spirit terminology, custom name tokens, and guarded native text/graphics insertion.
+- Full English translation of the story, battle quotes, and unit, weapon, pilot and ability descriptions, with a story-wide consistency audit
+- Official English name spellings for series, characters and mechs where they exist
+- Terms familiar from other SRW games: Will, Valor, Spirit, CQB / RNG / SKL
+- Menus and UI fitted to the screen, with labels sized and aligned to match the original layout
+- Translated graphics: title and copyright screens, terrain icons, battle badges such as Support Attack
+- Battle forecast cleaned up: full Action / Counter / Defend / Evade tabs, and unit cards that never overflow (long names get short forms on that screen only)
+- All 39 BGM titles translated and fitted to the sound menu
+- Build-time checks that catch any text that would spill out of its box
+- Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
 ## Download
 

@@ -53,7 +53,7 @@ See [playtesting and bug reports](release_docs/PLAYTESTING.md) and the [changelo
 
 ## Credits
 
-Thanks to the translation, engineering, editing and playtesting contributors; the Sol and DeepSeek passes; Brunom1's SRW L Let's Play for retained attributed dialogue/title references; Akurasu for terminology/context; and the emulator, xdelta and font authors. This project used AI assistance, including Codex, Claude and DeepSeek, with human review and playtesting. The two narration replacements are newly translated from Japanese.
+Thanks to the translation, engineering, editing and playtesting contributors; the Sol and DeepSeek passes; Akurasu for terminology/context; and the emulator, xdelta and font authors. This project used AI assistance, including Codex, Claude and DeepSeek, with human review and playtesting. The two narration replacements are newly translated from Japanese.
 
 Font acknowledgements: GohuFont by Hugo Chargois (WTFPL), with a project proportional adaptation; Roboto Condensed by the Roboto Project Authors (SIL Open Font License 1.1), used for raster lettering. Original game, artwork, music and character rights belong to their respective rights holders. This project is not affiliated with or endorsed by those rights holders.
 

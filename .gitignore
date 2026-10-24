@@ -1,0 +1,12 @@
+# ROMs, saves and emulator state
+*.[nN][dD][sS]
+*.[sS][aA][vV]
+*.[mM][lL]*
+# Private work and logs
+work/
+logs/
+*.[lL][oO][gG]
+__pycache__/
+*.py[cod]
+# Patch binaries are distributed through GitHub release assets.
+*.xdelta

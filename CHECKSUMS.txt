@@ -1,0 +1,18 @@
+Super Robot Taisen L English v0.9
+
+Patch reapplication: PASS (fresh source copy; SHA-256 and CRC32 match build)
+
+Clean Japanese ROM (not distributed): clean-jp.nds
+Size: 134217728 bytes
+SHA-256: a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f
+CRC32: 1D040BE8
+
+Translation patch: SRWL_English_v0.9.xdelta
+Size: 61275558 bytes
+SHA-256: 2f8ec2d531168fb3a3a198286a3aec092415571114083e0f9ea00f10aac35900
+CRC32: 3DF005E5
+
+Patched ROM (not distributed): SRWL_English_v0.9.nds
+Size: 234292908 bytes
+SHA-256: 8caaa39d45c18d532a2b5cb0115bb3dbc0f8487d6fa1d4fca22493b3fab762b2
+CRC32: 0F0E3042

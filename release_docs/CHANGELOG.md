@@ -2,6 +2,8 @@
 
 ## v0.9 -- 2026-10-25
 
+- Cartridge-menu update: all six banner language fields now display **Super Robot Wars L**. The icon, game code and game data are unchanged. Recreated the patch and checksums, verified both supported clean sources, and passed an independent browser decoder check and DeSmuME cold boot. The cumulative build has zero insertion errors and passes all 12 overlay guards; banner, title-graphics, ECD and story-fit tests pass (legacy overflow: 4,073). Existing 3DS forwarders need regeneration to show the new name. The Android JIT-off workaround still applies.
+
 - Header-compatibility update: the patch now accepts both the canonical source (CRC32 1D040BE8) and the identical game dump with zeroed extended-header metadata (CRC32 82804748). Both produce the unchanged approved English ROM. Verified with native xdelta and the published web-patcher decoder, with checksum validation enabled. Redownload the patch and matching checksum attachment if the first v0.9 patch reported a target-window mismatch on the alternate header.
 
 - Publishes the merged story/meaning/style, overflow, description, terminology and graphics work summarized below as a patch against the clean Japanese revision-0 ROM.

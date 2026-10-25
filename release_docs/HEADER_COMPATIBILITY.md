@@ -24,11 +24,11 @@ The old patch reproduces the reported `-17712` failure on the alternate source i
 
 The independent decoder check is reproducible with `tools/verify_web_patch.mjs` and the upstream [xdelta-wasm](https://github.com/kotcrab/xdelta-wasm) decoder. Supply its JavaScript/WASM files, your source ROM, the patch and the expected output SHA-256. The helper keeps checksum validation enabled and hashes the streamed output; no decoder binaries or ROMs are bundled.
 
-Updated patch SHA-256: `e68811e68b23aff42bb66eadf8ac9fc2cb82b6c7c58bb3e881eb0be09b4e98d3`.
+Current patch SHA-256 (including the cartridge-menu title update): `b40a4abfe3a7990a82728a6d36aff1c9028b24c0e99becf81b50562f6c5d2c90`.
 
-Both inputs produce the unchanged approved English ROM, 234292908 bytes:
+Both inputs produce the same English ROM, 234292908 bytes:
 
-- SHA-256: `8caaa39d45c18d532a2b5cb0115bb3dbc0f8487d6fa1d4fca22493b3fab762b2`
-- CRC32: `0F0E3042`
+- SHA-256: `c739a76f7bb17cb95943c089e6a02194f8d8db2f458b0d60650f28b7875d3e75`
+- CRC32: `A33F70B3`
 
-This correction changes patch packaging and source compatibility only. Translation, graphics, game code and saves are unchanged. No ROM or standalone game assets are distributed.
+The header correction changes patch packaging and source compatibility only. The current download also changes the six cartridge-menu title fields to **Super Robot Wars L** and updates their banner checksum; the icon and game data remain unchanged. No ROM or standalone game assets are distributed.

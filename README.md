@@ -19,6 +19,7 @@ It's version 0.9 right now on release, I would happily update it to version 1.0 
 - Terms familiar from other official SRW games like VTX30Y: Will, Valor, Spirit, CQB / RNG / SKL
 - Menus and UI fitted to the screen, with labels sized and aligned to match the original layout
 - Translated graphics: title and copyright screens, terrain icons, battle badges such as Support Attack
+- English cartridge-menu title: **Super Robot Wars L** in all six banner languages
 - Battle menu cleaned up: full Action / Counter / Defend / Evade tabs
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
@@ -51,13 +52,17 @@ If yours matches neither, the patch won't apply. If you got a "target window che
 ## How to patch
 1. Check your ROM's SHA-256 against one of the hashes above.
 2. Open Delta Patcher (or any xdelta patcher). Pick your ROM as **Original file** and the .xdelta as **Patch**, and save to a new file.
-3. Optional: check the patched ROM against `CHECKSUMS.txt`. It should be `8caaa39d45c18d532a2b5cb0115bb3dbc0f8487d6fa1d4fca22493b3fab762b2`.
+3. Check the patched ROM against `CHECKSUMS.txt`. It should be `c739a76f7bb17cb95943c089e6a02194f8d8db2f458b0d60650f28b7875d3e75`.
 4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
 Command line:
 ```sh
 xdelta3 -d -s clean-jp.nds SRWL_English_v0.9.xdelta SRWL_English_v0.9.nds
 ```
+
+The latest v0.9 download includes the English ROM-list title. Apply it to a clean Japanese ROM, not an already patched ROM. Refresh cached ROM lists after replacing the ROM. For an existing 3DS HOME Menu forwarder, recreate the forwarder from the new ROM to update its stored title. The icon and game data are unchanged by this title update.
+
 ## Known issues
+- On Watermelon DS / melonDS Android, turn off JIT if the intro crashes. The English release works with JIT off; this title update does not change that workaround.
 - The ending staff credits are still in Japanese (the translation is done, it just needs an ending save to test).
 - The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
 - Tested in DeSmuME. Real hardware hasn't been checked.

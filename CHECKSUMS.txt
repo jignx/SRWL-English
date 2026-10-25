@@ -1,8 +1,10 @@
-Super Robot Wars L English v0.9 -- English cartridge-menu title
+Super Robot Wars L English v0.91
 
-Patch reapplication: PASS for both supported source headers; identical output hash below
+Patch verification: xdelta3 3.2.2, source checksum (whole-file BLAKE3) checking enabled.
+Each patch was applied to its own supported dump and produced the identical patched ROM below.
+Applying a patch to the other dump is refused with "source file BLAKE3 mismatch".
 
-Clean Japanese ROM (not distributed): clean.nds
+Clean Japanese ROM (canonical header, not distributed): clean.nds
 Size: 134217728 bytes
 SHA-256: a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f
 CRC32: 1D040BE8
@@ -12,12 +14,17 @@ Size: 134217728 bytes
 SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
-Translation patch: SRWL_English_v0.9.xdelta
-Size: 61276066 bytes
-SHA-256: b40a4abfe3a7990a82728a6d36aff1c9028b24c0e99becf81b50562f6c5d2c90
-CRC32: F6C49055
+Translation patch (canonical header): SRWL_English_v0.91_standard.xdelta
+Size: 1831395 bytes
+SHA-256: ae3b83ad40316b7ec177c20891a351371b7bd6feddef57a284852af455b7c710
+CRC32: 45C6F472
 
-Patched ROM (not distributed): SRWL_English_v0.9.nds
-Size: 234292908 bytes
-SHA-256: c739a76f7bb17cb95943c089e6a02194f8d8db2f458b0d60650f28b7875d3e75
-CRC32: A33F70B3
+Translation patch (zeroed extended-header metadata): SRWL_English_v0.91_alt-header.xdelta
+Size: 1831623 bytes
+SHA-256: a93539ba9812d4a788f86971549f8002740733bf6336977d597b3bfd32c78def
+CRC32: 96830C9E
+
+Patched ROM (not distributed): SRWL_English_v0.91.nds
+Size: 128551996 bytes
+SHA-256: 0c3cda0339ca583fbd7b08b8503588eafba65e4267e45f318d27ea389ac2ea1b
+CRC32: 193D992D

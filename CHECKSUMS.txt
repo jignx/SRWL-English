@@ -1,8 +1,7 @@
 Super Robot Wars L English v0.91
 
-Patch verification: xdelta3 3.2.2, source checksum (whole-file BLAKE3) checking enabled.
-Each patch was applied to its own supported dump and produced the identical patched ROM below.
-Applying a patch to the other dump is refused with "source file BLAKE3 mismatch".
+One patch for both supported source headers (header-neutral encoding).
+Patch reapplication: PASS on both dumps; identical output hash below.
 
 Clean Japanese ROM (canonical header, not distributed): clean.nds
 Size: 134217728 bytes
@@ -14,15 +13,10 @@ Size: 134217728 bytes
 SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
-Translation patch (canonical header): SRWL_English_v0.91_standard.xdelta
-Size: 1831395 bytes
-SHA-256: ae3b83ad40316b7ec177c20891a351371b7bd6feddef57a284852af455b7c710
-CRC32: 45C6F472
-
-Translation patch (zeroed extended-header metadata): SRWL_English_v0.91_alt-header.xdelta
-Size: 1831623 bytes
-SHA-256: a93539ba9812d4a788f86971549f8002740733bf6336977d597b3bfd32c78def
-CRC32: 96830C9E
+Translation patch: SRWL_English_v0.91.xdelta
+Size: 6829409 bytes
+SHA-256: 052cf7e2662f501648f9f8a08016ab2a9e0e1087bfe921d57340091546bd664b
+CRC32: F2B28C0E
 
 Patched ROM (not distributed): SRWL_English_v0.91.nds
 Size: 128551996 bytes

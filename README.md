@@ -34,9 +34,7 @@ It's version 0.91 right now on release, I would happily update it to version 1.0
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
 ## Download
-Grab the patch that matches your dump and `CHECKSUMS.txt` from the [Releases page](../../releases):
-- `SRWL_English_v0.91_standard.xdelta` -- for the canonical clean dump
-- `SRWL_English_v0.91_alt-header.xdelta` -- for the otherwise-identical dump with zeroed extended-header metadata
+Grab `SRWL_English_v0.91.xdelta` and `CHECKSUMS.txt` from the [Releases page](../../releases). The same patch works for both known clean dumps.
 
 No pre-patched ROMs, please don't ask.
 
@@ -60,29 +58,25 @@ Captured in DeSmuME, showing both Nintendo DS screens at their original resoluti
 | ![Goh's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Alto's battle animation and English dialogue](screenshots/battle-animation.png) |
 
 ## What you need
-A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known, and each has its own patch:
+A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known, and the one patch applies to both:
 
-| Dump | SHA-256 | CRC32 | Use |
-| --- | --- | --- | --- |
-| Canonical | `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f` | `1D040BE8` | `SRWL_English_v0.91_standard.xdelta` |
-| Zeroed extended-header metadata | `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f` | `82804748` | `SRWL_English_v0.91_alt-header.xdelta` |
+| Dump | SHA-256 | CRC32 |
+| --- | --- | --- |
+| Canonical | `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f` | `1D040BE8` |
+| Zeroed extended-header metadata | `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f` | `82804748` |
 
-If yours matches neither, the patch won't apply. The patches carry an xdelta3 source checksum: applying one to the wrong dump is refused with a source mismatch instead of producing a bad ROM.
+They contain identical game data; only 188 bytes of unused extended-header metadata in the first 4 KiB differ. If your dump matches neither, the patch won't apply cleanly. Keep checksum validation enabled: the patch checks its target windows, so a corrupted or modified source is refused instead of producing a broken ROM.
 
 ## How to patch
-1. Check your ROM's SHA-256 against the table above and pick the matching patch.
+1. Check your ROM's SHA-256 against the table above.
 2. Apply the patch to a copy of your dump:
 ```sh
-# canonical dump
-xdelta3 -d -s clean-jp.nds SRWL_English_v0.91_standard.xdelta SRWL_English_v0.91.nds
-
-# zeroed-header dump
-xdelta3 -d -s zeroed-header-jp.nds SRWL_English_v0.91_alt-header.xdelta SRWL_English_v0.91.nds
+xdelta3 -d -s clean-jp.nds SRWL_English_v0.91.xdelta SRWL_English_v0.91.nds
 ```
 3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,551,996 bytes with SHA-256 `0c3cda0339ca583fbd7b08b8503588eafba65e4267e45f318d27ea389ac2ea1b`.
 4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
 
-The patches use xdelta3 3.2.2 source checksums, so apply them with xdelta3 3.2.2 or later (or a patcher that supports that checksum). Keep checksum validation enabled; if a patcher reports a source mismatch, you are using the other dump's patch.
+Keep checksum validation enabled in your patcher. The patch is encoded so it does not depend on the 188 bytes of extended-header metadata that differ between the two dumps, which is why one file works for both. Because one patch has to cover two sources, it does not carry a whole-file source checksum -- so **always check the patched output** against `CHECKSUMS.txt` (or the hash in step 3). If a patcher reports a target-window checksum mismatch, stop: the source or patch is damaged, so re-check the dump hash and redownload the patch.
 
 The latest v0.91 ROM displays the English ROM-list title. Refresh cached ROM lists after replacing the ROM. For an existing 3DS HOME Menu forwarder, recreate the forwarder from the new ROM to update its stored title.
 

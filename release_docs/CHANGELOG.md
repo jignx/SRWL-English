@@ -1,60 +1,153 @@
 # Changelog
 
-## v0.91 -- 2026-10-25
+Release packets are cumulative: each one contains every earlier text and engine
+change unless the entry says otherwise. Only the versions listed here as releases
+were handed out; the other builds were private test builds.
 
-- **JIT/dynarec on now works.** The engine's five ARMv6K `nop` hints (`0xE320F000`, which the ARM9 decodes as an MSR) were replaced with the ARMv5 `mov r0, r0`, and the assembler now rejects the hint encoding. The prologue-intro freeze on melonDS Android and WatermelonDS is fixed; no emulator setting needs to be disabled. This supersedes the v0.9 JIT-off workaround.
-- **Smaller, faster ROM.** The final packer repacks the image tightly: 234,292,908 -> 128,551,996 bytes (128.5 MB), below the clean 128 MiB Japanese image. All 108 FAT payloads and the ARM9/ARM7/FNT/banner blobs are byte-identical to the pre-shrink v1.0 build; only layout offsets, the ROM size/capacity fields and the header checksum changed. The game content is unchanged and the smaller file loads faster.
-- **v0.9 player fixes merged.** Macross Quarter is exactly "Macross Quarter" for both fortress and assault states (short and full); pilot 260's two-row 104px label is one line, `KATOU ORG. SOLDIER`; the wide-header picture hook no longer draws the previous speaker's first glyph before a following text name (Katou -> Kouichi).
-- **26 leftover Japanese names translated.** 16 unit picture-cell names, 8 weapon picture-cell names and 2 Shift-JIS pilot full names that no text scan could reach now have English names, pinned in `Remaining_Text/name_source_catalog.json` with a catalog test.
-- **Cartridge-menu title.** ROM lists show **Super Robot Wars L** in all six banner languages (carried from v0.9).
-- **One patch for both dumps.** `SRWL_English_v0.91.xdelta` applies to the canonical clean dump and to the otherwise-identical dump with zeroed extended-header metadata; both produce the same ROM below. The patch is encoded header-neutrally (the v0.9 technique) so it does not depend on the first 4 KiB, with target-window checksums enabled; it was applied to both real dumps during verification.
-- Patch: 6,829,409 bytes, SHA-256 `052cf7e2662f501648f9f8a08016ab2a9e0e1087bfe921d57340091546bd664b`, CRC32 `F2B28C0E`. The 188 differing header bytes are baked out as literals (filled with junk in the encoding reference) and `-B` covers the whole ROM; whole-file source verification is off, target-window checksums stay on, so check the patched output hash.
-- Sources: canonical dump SHA-256 `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f` (CRC32 `1D040BE8`); zeroed-header dump SHA-256 `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f` (CRC32 `82804748`). Both are 134,217,728 bytes and contain identical game data.
-- Patched ROM: 128,551,996 bytes, SHA-256 `0c3cda0339ca583fbd7b08b8503588eafba65e4267e45f318d27ea389ac2ea1b`, CRC32 `193D992D`.
-- Verified: build 26,500 UI / 1,704 residual / 23,415 battle records, 0 insertion errors, engine sources verified, 12/12 overlay guards, zero-Japanese and upgrade-UI contract pass. Standalone suite on master: 106 modules / 616 tests with only the three documented legacy exceptions (engine-source, Spirit-marker, text-presence); story-fit diagnostic 4,073 (baseline); `test_engine_nop_encoding` (built-ROM scan) and `test_rom_compact` pass. Cold boot through the intro (DeSmuME libretro, fresh boot, designated save) ran 20,236 frames / 27 captures with 27/27 captures byte-identical to the pre-shrink v1.0 build. Both patched ROMs boot in DeSmuME.
+## v0.92 - 2026-10-26
 
-## v0.9 -- 2026-10-25
+- **Anti-piracy is fully disabled in the ROM itself.** The eight checks the Action Replay
+  code used to neutralise live in overlay 0 (FAT file 0, loaded at `0x021AE4C0`); all eight
+  bytes are now patched permanently at build time, so the game runs without a cheat file or a
+  patched flashcard loader. The patch is byte-identical to the community AAP bypass and needs no
+  recompression.
+- **English staff credits.** All 23 credit pages are English and ship enabled in the normal
+  build (the roll was previously withheld behind a build flag). The page-4 heading reads
+  **"Story Outline"**.
+- **Weapon-name fixes.** Shared weapon strings are now split per unit where the official name
+  differs: Blade Gainer's plain katana reads **Katana** while Celleblader keeps **Laser Blade**,
+  and the pilot 剣 stays **Ken** while the four 剣 weapons read **Sword**. Blade Gainer's
+  Gottfried-style pun attacks are corrected to **Hell's Wind** and **Hell's Hurricane**, its
+  follow-up reads **Death Strash**, and the sword it swings is **Celleblade**. Four further
+  sword names were reviewed against licensed sources and updated: **Dancou Dangai Sword**,
+  **Zankitou**, **Tachi Combo Slash** and **Heavy Sword**. Everything else keeps its approved
+  wording (including "Breaker Shoot" and both Blade Gainer forms sharing "Death Strash").
+- **Text fixes:** the three Japanese series titles now read Gundam Seed Destiny, Gundam Wing EW
+  and Godannar!! 2nd Season, the Dancouga unit name is R-Daigun, 博士の家 is Prof's House, and the
+  remaining playtest text corrections are in.
+- **Graphics and UI alignment:** six map ability pop-ups (Steel Power, Ammo Refill, Mazin Power,
+  Zero System, Link and Unlink) and nine Iczer skill picture cells are installed with their native
+  palettes and positions; the pilot-stat page uses the native six-column alignment including the
+  Hit column; hidden list tiles are reused so the Kills and Support Defense pages no longer
+  corrupt; the sort headings have measured frames including Support Attack and Support Defense;
+  and the formation and sortie screens show the native terrain icons with their inline headers.
+- **One patch for both dumps**, as in v0.91: `SRWL_English_v0.92.xdelta` applies to the canonical
+  dump (`a2b666a2...`) and to the zeroed extended-header dump (`1bc8e2e0...`), and both produce the
+  same patched ROM. Check the patched ROM hash in `CHECKSUMS.txt`.
 
-- Cartridge-menu update: all six banner language fields now display **Super Robot Wars L**. The icon, game code and game data are unchanged. Recreated the patch and checksums, verified both supported clean sources, and passed an independent browser decoder check and DeSmuME cold boot. The cumulative build has zero insertion errors and passes all 12 overlay guards; banner, title-graphics, ECD and story-fit tests pass (legacy overflow: 4,073). Existing 3DS forwarders need regeneration to show the new name. The Android JIT-off workaround still applies.
+## v0.91 - 2026-10-25
 
-- Header-compatibility update: the patch now accepts both the canonical source (CRC32 1D040BE8) and the identical game dump with zeroed extended-header metadata (CRC32 82804748). Both produce the unchanged approved English ROM. Verified with native xdelta and the published web-patcher decoder, with checksum validation enabled. Redownload the patch and matching checksum attachment if the first v0.9 patch reported a target-window mismatch on the alternate header.
+- **JIT/dynarec on is supported.** The engine's five ARMv6K `nop` hints
+  (`0xE320F000`, decoded as an MSR on the ARM9) were replaced with the ARMv5
+  `mov r0, r0`, and the assembler now rejects the hint encoding. The prologue-intro
+  freeze on melonDS Android and WatermelonDS is fixed; no emulator setting needs to
+  be disabled. This supersedes the v0.9 JIT-off workaround.
+- **ROM is 128.5 MB instead of 234 MB.** The final packer repacks the image tightly
+  (234,292,908 -> 128,551,996 bytes, below the clean 128 MiB Japanese image) and
+  loads faster. All 108 FAT payloads and the ARM9/ARM7/FNT/banner blobs are
+  byte-identical to the pre-shrink build; only layout offsets, size/capacity fields
+  and the header checksum changed. Game content is unchanged.
+- **v0.9 player fixes:** Macross Quarter unit names (fortress and assault states),
+  one-line `KATOU ORG. SOLDIER` enemy label, and the speaker-plate overhang glyph
+  fix.
+- **26 leftover Japanese names translated:** 16 unit picture-cell names, 8 weapon
+  picture-cell names and 2 Shift-JIS pilot full names that no text scan could
+  reach (`Remaining_Text/name_source_catalog.json`, with a catalog test).
+- **One patch for both dumps.** `SRWL_English_v0.91.xdelta` applies to the
+  canonical dump (`a2b666a2...`, CRC32 `1D040BE8`) and to the otherwise-identical
+  zeroed extended-header dump (`1bc8e2e0...`, CRC32 `82804748`); both produce the
+  same patched ROM. The 188 differing header bytes are filled with junk in the
+  encoding reference and emitted as literals (v0.9-style header-neutral encoding);
+  the source window covers the whole ROM, whole-file source verification is off
+  and target-window checksums stay on, so check the patched output hash. Verified
+  on both dumps. Patch: 6,829,409 bytes, SHA-256
+  `052cf7e2662f501648f9f8a08016ab2a9e0e1087bfe921d57340091546bd664b`,
+  CRC32 `F2B28C0E`.
+  Patched ROM: 128,551,996 bytes, SHA-256
+  `0c3cda0339ca583fbd7b08b8503588eafba65e4267e45f318d27ea389ac2ea1b`,
+  CRC32 `193D992D`.
+- Verified: 26,500 UI / 1,704 residual / 23,415 battle records, 0 insertion errors,
+  engine sources verified, 12/12 overlay guards, zero-Japanese and upgrade-UI
+  contract pass. Standalone suite 106 modules / 616 tests with only the three
+  documented legacy exceptions; story-fit diagnostic 4,073 (baseline).
+  `test_engine_nop_encoding` and `test_rom_compact` pass. Cold boot through the
+  intro (DeSmuME libretro, fresh boot): 20,236 frames, 27 captures, 27/27
+  byte-identical to the pre-shrink build. Both patched ROMs boot in DeSmuME.
 
-- Publishes the merged story/meaning/style, overflow, description, terminology and graphics work summarized below as a patch against the clean Japanese revision-0 ROM.
-- Includes the gold support-badge correction and Iczer-1 crash fix; Action-tab and tab-ghost fixes; UI sweep 2 wording/spacing; and the all-song BGM title guard.
-- Includes the newly translated Japanese-based opening narration and history graphics, approved in-game.
-- Verified by standalone tests (three documented exceptions), zero insertion errors, 12 overlay guards, cold-boot smoke, and fresh-source patch reapplication with matching SHA-256/CRC32.
-- Uses the v0.9 checksums at the repository root. Historical build numbers below do not identify the v0.9 patch or its output.
-
-## Historical development notes
-
-This summary describes recorded development work and earlier release notes. It is draft documentation, not a fresh release certification.
-
-## Unreleased work after v309
-
-- Completed the full story meaning/style audit across stages 1-41, including alternate routes, the ending and epilogue. Applied approved stages 1-5 and 6-10 revisions; stages 11-20 received 519 revisions, stages 21-30 received 343, and stages 31-41 received 481. Character voices, meaning, grammar, contractions, apostrophes, ranks and settled wording were reviewed. Internal test labels were excluded.
-- Reviewed all 622 high-risk story overflow rows and applied their revisions. Native insertion checks report zero overflows; the older story-fit diagnostic still reports 4,073 and must not be described as a clean full-playthrough result.
-- Audited all 23,415 battle-quote pages for style and meaning. Applied 55 low-risk style fixes and 268 meaning fixes; retained the canonical Glain Neidr spelling instead of one conflicting proposal. Higher-risk style proposals remain review work. Repaired spaces beside dynamic name tokens in 13 pages and checked all 165 dynamic pages without changing their controls or substitution order. The approved Ichitaka/Alice voice pass is retained; Daiya and Lulu review drafts are separate from installed work.
-- Audited non-dialogue descriptions, ability/skill/part names, units, weapons, mission titles, objectives and Spirit/UI labels. Applied 132 low-risk style rows and 23 meaning revisions; nine meaning findings were already satisfied. Four route-label proposals could not be repacked safely. Unresolved fit and identity questions remain listed for playtesting.
-- Settled the mechanic terms **Will**, **Valor** and **Spirit** in place of Morale, Hot Blood and Yell. Applied 14 follow-up term records, including the missed Will -20 line. Ordinary dialogue uses of morale, yelling and hot-blooded remain context-dependent.
-- Standardized character-name spellings, terminology, ranks and punctuation, with regression checks and a term-variant review.
-- Added player and team name-token support in story text.
-- Applied short mission titles to the relevant title strings; Clear Data short-title drafts remain separate from installed changes.
-- Improved menu wording and fit, including bonus and Use-screen labels, battle-result EXP and upgrade accuracy text.
-- Installed approved English series plates, ability/status and Spirit banners, BGM lettering and 29 pilot-name pictures. Added all 55 English stage cards, corrected title-to-card mapping and applied the approved title wording. Full enemy labels fit the tested story/battle headers; narrow fields still need coverage.
-- Added map-result graphics, including the title-case Critical popup. Installed coloured terrain silhouettes on tested Unit Stats and Weapon Power screens: cloud for air, mountains for land, waves for sea and star for space. Added separate forecast dictionary pictures without changing shared alphabet or upgrade-bar art. Natural forecast checks cover air/land; sea/space were verified with renderer fixtures and still need natural gameplay coverage. Underground remains a draft.
-- Localized the title plate and boot copyright screens in separate private title-art builds. The approved English logo retains the corrected straight lower border and red glow. Larger mixed-case copyright lettering preserves all 13 complete attributions, dates and copyright symbols within the original tile budgets; cold-boot and visual checks passed for those builds. This is distinct from the deferred ending staff-credit roll.
-- Centered the search grid and recorded further map-screen and title-screen findings. Leftover text under orange tabs and icon-spacing blockers remain documented issues; do not assume every menu finding is fixed.
-- Refined Turns, Save Data Name/Funds alignment, Overview, Combo, All Units/Team BGM, Swap Unit, Pick Unit/Pick PU, Stat/Now/After/Parts, Barrier + and Hit wording. Corrected texture tile counting while preserving native positioning. Some labels were verified only in specific layouts; Barrier + still needs a naturally reached example.
-
-These entries summarize development across several local branches and private test builds. They do not claim that every change is merged into one published patch. No ROM, patch or new release certification is produced by this documentation update. Latest recorded broad checks retain known test failures; focused checks and earlier runtime evidence apply only to their recorded builds.
+- **Style pass on existing text**, applied through `tl revise`:
+  - 17 lines that used a Unicode em dash now use `--`. A Unicode dash is
+    normalized to a single hyphen in game, so these lines used to read as
+    "Alto-and" or "Wha-!"; the double hyphen is the approved interruption form.
+  - 18 lines that used two dots or a Unicode ellipsis now use ASCII periods:
+    six periods for two Japanese ellipsis marks, three for one mark or an
+    existing pause. This includes the short battle reactions that used to show
+    two dots.
+  - No name, name token, control code or line break was changed. Every edited
+    line was re-encoded with the story or battle encoder and keeps its row count.
+  - Private build only; not part of the v309 hashes. These edits are part of the
+    v0.91 packet.
+- Canonical character-name spellings applied across dialogue, battle lines and
+  the name tables (`test_canonical_names`).
+- Player name tokens (`{Ichitaka}`, `{Alice}`, `{Unit}`, `{FullName}`,
+  `{Family}`) and the team token (`{Team}`) now work in story text.
+- Menu fit pass: the bonus prefix reads `Barrier +` (so the game shows
+  `Barrier +1000`), and the Use screen header reads `After`; the remaining
+  item wording was staged for review.
+- Terrain icons installed for air, land, sea, space, water and underground with
+  guarded selectors and a pixel-only runtime check.
+- Map Critical popup redrawn in title case, plus the map-result family art
+  (HIT / EVADE / status labels).
+- Short picture labels for pilots 260 and 263; Sir Violet's name picture on one
+  line so the text log no longer clips it.
+- Battle RESULT EXP overflow and Upgrade Units Accuracy label spill fixed.
+- Objective wording and stage-title pass, Spirit marker spacing, and a
+  Japanese-term variant scan.
+- Added the release checksum tool, the settled-renderings/choices reports and
+  this release packet.
+- Short mission titles for the Clear Data line were drafted only; they are not
+  installed.
 
 ## v309 - 2026-10-22
 
-- Existing cumulative English patch packet, including the approved text package and recorded graphics fixes.
-- Source and output checksums are documented in the existing release packet. No new ROM or patch was generated for this documentation branch.
+- Current release packet. Built from the cumulative working tree; no commits
+  were made between v308 and v309.
+- SHA-256 of the patched ROM: `527e4415c3bdb4c3f068980fb54af29cf19dc692d868d31fb052763d1412e7cb`.
+- Includes the approved 2026-10-22 text package and the graphics fixes recorded
+  below. Release save is a copy of the designated mission-5 save; the original
+  is never modified.
+- v309 is the build the hashes in this v309 section describe; v0.91 supersedes it
+  and has its own hashes in `README.md` and `CHECKSUMS.txt`.
 
-## Earlier work
+## v308 - 2026-10-22
 
-- v308 recorded a passing full test run; v309 superseded it for testing.
-- Earlier builds developed dialogue, battle text, names, menus, fonts and graphics through repeated audits and runtime checks.
-- Historical test counts and screenshots describe their original builds; a new release requires validation of its own artifact.
+- Green release: 78 test modules, 469 tests, 0 failures; engine-source,
+  text-presence, overlay and format-slot checks passed.
+- Included the Okusaer, percent/Destroy Gundam, Misato/Mihoshi and Spirit #28
+  changes.
+- Recorded as the last full green release before v309. v309 supersedes it for
+  testing.
+
+## v307, v305, v303
+
+- Not recommended. These builds were red or had stale evidence and were
+  superseded by v308 and v309.
+- Kept only for project history; do not use them as the base for a bug report.
+
+## v306, v304, v301, v302
+
+- Successive text, menu and graphics passes.
+- v304 supplied the previous designated save.
+- v306 added the approved Lulu wording and its related checks.
+
+## Earlier releases
+
+- v295, v276, v273 and v267 were intermediate snapshots used for menu, battle
+  and graphics QA.
+- Older changes are recorded in the project's AI changelog and the per-release
+  notes. Very old release folders have been removed; do not rely on their paths.
+
+## Reporting a problem
+
+Use `PLAYTESTING.md`. A report needs the stage or menu path, a screenshot, the
+Japanese line or record ID if you know it, your suggested fix, and the `.sav`
+you used. Save states are not accepted as the only evidence.

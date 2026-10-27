@@ -1,6 +1,6 @@
-# v0.92 source headers and patch
+# v0.92.1 source headers and patch
 
-v0.92 ships **one patch** for both supported clean dumps: `SRWL_English_v0.92.xdelta`.
+v0.92.1 ships **one patch** for both supported clean dumps: `SRWL_English_v0.92.1.xdelta`.
 
 | Source dump | Size | SHA-256 | CRC32 |
 | --- | --- | --- | --- |
@@ -29,21 +29,20 @@ and each produced exactly:
 
 | Property | Value |
 | --- | --- |
-| Patched size | 128,551,996 bytes |
-| Patched SHA-256 | `0c3cda0339ca583fbd7b08b8503588eafba65e4267e45f318d27ea389ac2ea1b` |
-| Patched CRC32 | `193D992D` |
+| Patched size | 128,499,260 bytes |
+| Patched SHA-256 | `35cdc6aab4b7dc82885a845712c250590f4a533f7ed7f2ddba6352490547fbbe` |
+| Patched CRC32 | `0396A124` |
 
-A different game ROM and a corrupted copy of the canonical dump were both rejected with
-`target window checksum mismatch`.
+The patch was reapplied to both supported clean dumps; both outputs match the release hash.
 
 Patch values:
 
 | Property | Value |
 | --- | --- |
-| Patch | `SRWL_English_v0.92.xdelta` |
-| Size | 7,013,317 bytes |
-| SHA-256 | `c32cdefd5af191f0548c317f68b3648a6d62fdc3fafd4d4e11200ba242e322be` |
-| CRC32 | `805C4CF5` |
+| Patch | `SRWL_English_v0.92.1.xdelta` |
+| Size | 7,010,029 bytes |
+| SHA-256 | `ec5a63b215a9e483ee74e7320b2993d8d32e5f69d30f884b89e5824cabcf75a4` |
+| CRC32 | `594A8171` |
 
 Because the patch has no whole-file source checksum, **check the patched output hash** against
 `CHECKSUMS.txt` after applying it. If a patcher offers an option to ignore checksum errors, do not

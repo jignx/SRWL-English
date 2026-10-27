@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v0.92
+# Super Robot Taisen L -- English v0.92.1
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only xdelta patches, checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
 
@@ -8,7 +8,14 @@ I was curious about using AI as a tool in order to translate a SRW game (been a 
 In my opinion, using AI to help translate a game is far harder than I thought. While AI makes it easier, a lot of work is just figuring things out and applying solutions and waiting. I spent the past few weeks wrestling with SRW L and seeing bugs and issues crop up one over another.
 After playing through it a bit and fixing all the bugs I could spot, I feel like this is good enough for a public release and something I'm proud of putting out into the world. Please do let me know if you find any bugs or issues while playing the game. I would be happy to fix them.
 
-## What's new in v0.92
+## What’s new in v0.92.1
+- Fixed garbage font tiles below Skills, Spirits and Abilities descriptions, including Shield Defense in map Search. The cache allocation fix also prevents the resulting graphics damage after leaving help.
+- Corrected unit identity data: Jack Smith no longer displays Takeminakata; Gaiking no longer displays Godannar. Heavyarms Kai, Dancouga Nova Max God and Quadran with Super Pack also use their correct names. Gaiking the Great retains its correct name.
+- The Kills/Support Defense fix is retained.
+
+This cumulative hotfix includes all v0.92 changes. It passed 640 automated tests and cold-boot emulator checks, including full-roster list selections. The remaining broad menu and route sweeps are deferred; this is still a public playtesting release.
+
+## Included from v0.92
 - **Anti-piracy game over fixed on DS/3DS and flashcarts.** Anti-piracy checks are fully disabled in the patch; no cheat file is needed.
 - **English ending credits**, including the Story Outline heading.
 - **Weapon and name fixes**, including the Katana/Laser Blade and Ken/Sword splits, Dancou Dangai Sword, Zankitou, Tachi Combo Slash and Heavy Sword.
@@ -40,7 +47,7 @@ The game has been translated, including the ending credits, but has not been pla
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
 ## Download
-Grab `SRWL_English_v0.92.xdelta` and `CHECKSUMS.txt` from the [v0.92 release](https://github.com/jignx/SRWL-English/releases/tag/v0.92). The same patch works for both known clean dumps.
+Grab `SRWL_English_v0.92.1.xdelta` and `CHECKSUMS.txt` from the [v0.92 release](https://github.com/jignx/SRWL-English/releases/tag/v0.92.1). The same patch works for both known clean dumps.
 
 No pre-patched ROMs, please don't ask.
 
@@ -77,9 +84,9 @@ They contain identical game data; only 188 bytes of unused extended-header metad
 1. Check your ROM's SHA-256 against the table above.
 2. Apply the patch to a copy of your dump:
 ```sh
-xdelta3 -d -s clean-jp.nds SRWL_English_v0.92.xdelta SRWL_English_v0.92.nds
+xdelta3 -d -s clean-jp.nds SRWL_English_v0.92.1.xdelta SRWL_English_v0.92.1.nds
 ```
-3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,499,260 bytes with SHA-256 `49a5c0455aea2ab91eca81059e31b01613267bcb1dd6efa64483c47faae1821e`.
+3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,499,260 bytes with SHA-256 `35cdc6aab4b7dc82885a845712c250590f4a533f7ed7f2ddba6352490547fbbe`.
 4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
 
 Keep checksum validation enabled in your patcher. The patch is encoded so it does not depend on the 188 bytes of extended-header metadata that differ between the two dumps, which is why one file works for both. Because one patch has to cover two sources, it does not carry a whole-file source checksum -- so **always check the patched output** against `CHECKSUMS.txt` (or the hash in step 3). If a patcher reports a target-window checksum mismatch, stop: the source or patch is damaged, so re-check the dump hash and redownload the patch.

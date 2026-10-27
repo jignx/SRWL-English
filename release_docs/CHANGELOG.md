@@ -4,6 +4,14 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v0.92.1 - 2026-10-27
+
+- Fixed the shared Skills/Spirits/Abilities help cache allocation, including Shield Defense in map Search and the graphics damage that could follow it.
+- Corrected Jack Smith's full-name aliases and the Gaiking, Heavyarms Kai, Dancouga Nova Max God and Quadran (Super Pack) identity data.
+- Retained the Kills/Support Defense correction. No general font-cache or rendering rewrite.
+- Validated with 640 automated tests, cold boots and three full-roster list sweeps. Broader menu/route sweeps remain for a later session.
+- Patch from a clean supported Japanese dump, then cold boot and load an in-game save. Do not apply over v0.92 or load an old emulator savestate.
+
 ## v0.92 - 2026-10-26
 
 - **Anti-piracy is fully disabled in the ROM itself.** The eight checks the Action Replay

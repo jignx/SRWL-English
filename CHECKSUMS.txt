@@ -1,4 +1,4 @@
-Super Robot Wars L English v0.92
+Super Robot Wars L English v0.92.1
 
 One patch for both supported source headers (header-neutral encoding).
 Patch reapplication: PASS on both dumps; identical output hash below.
@@ -13,12 +13,12 @@ Size: 134217728 bytes
 SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
-Translation patch: SRWL_English_v0.92.xdelta
-Size: 7013317 bytes
-SHA-256: c32cdefd5af191f0548c317f68b3648a6d62fdc3fafd4d4e11200ba242e322be
-CRC32: 805C4CF5
+Translation patch: SRWL_English_v0.92.1.xdelta
+Size: 7010029 bytes
+SHA-256: ec5a63b215a9e483ee74e7320b2993d8d32e5f69d30f884b89e5824cabcf75a4
+CRC32: 594A8171
 
-Patched ROM (not distributed): SRWL_English_v0.92.nds
+Patched ROM (not distributed): SRWL_English_v0.92.1.nds
 Size: 128499260 bytes
-SHA-256: 49a5c0455aea2ab91eca81059e31b01613267bcb1dd6efa64483c47faae1821e
-CRC32: 76E7FE7B
+SHA-256: 35cdc6aab4b7dc82885a845712c250590f4a533f7ed7f2ddba6352490547fbbe
+CRC32: 0396A124

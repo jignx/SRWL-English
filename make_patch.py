@@ -64,7 +64,7 @@ def main(argv=None):
         if source.stat().st_size != SOURCE_SIZE or digest(source)[0] != SOURCE_SHA256:
             raise ValueError("Source ROM is not the supported canonical clean dump.")
         if (built.stat().st_size, digest(built)[0]) != (RELEASE_SIZE, RELEASE_SHA256):
-            raise ValueError("Built ROM is not the v0.91 release ROM (size/SHA-256 mismatch).")
+            raise ValueError("Built ROM is not the v1.0 release ROM (size/SHA-256 mismatch).")
         executable = shutil.which(args.xdelta)
         if not executable:
             raise ValueError("xdelta3 was not found; install it or pass --xdelta.")

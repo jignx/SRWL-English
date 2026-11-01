@@ -1,9 +1,9 @@
 """Write a plain CHECKSUMS.txt for a base ROM and its patched build.
 
 Usage:
-    python tools/make_release_checksums.py rom/game.nds releases/v309/game_en.nds
+    python tools/make_release_checksums.py rom/game.nds build/game_en.nds
     python tools/make_release_checksums.py rom/game.nds build/game_en.nds \
-        --build-name "SRW L English v309" --out dist/CHECKSUMS.txt
+        --build-name "SRW L English v1.0" --out dist/CHECKSUMS.txt
 
 The output records the build name, then size, MD5 and SHA-1 for both files.
 Hashes are streamed, so this works on multi-hundred-megabyte ROMs.

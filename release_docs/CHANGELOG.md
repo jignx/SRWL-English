@@ -30,8 +30,8 @@ were handed out; the other builds were private test builds.
   Patched ROM: 128,484,412 bytes, SHA-256
   `f183ea1562c794e0ac5e39eda0c5fe335f0ed81e20596b15511d55e55a0d2643`, CRC32 `9C705A37`.
   Verified by applying the patch to fresh copies of both dumps.
-- **Build checks:** private build `work/private/20261101_184844/private.nds` and release candidate
-  `releases/v314/SRWL_English_v314.nds` are byte-identical (SHA-256 above); 26,500 UI / 1,705
+- **Build checks:** the final private build and the v1.0 release build are byte-identical
+  (SHA-256 above); 26,500 UI / 1,705
   residual / 23,415 battle records, 0 insertion errors, engine sources verified, 12/12 overlay
   guards. Release-tier suite: 113 modules / 651 tests, all pass. Cold boot in DeSmuME passes
   (5 captures, smoke frame OK).
@@ -124,8 +124,7 @@ were handed out; the other builds were private test builds.
     two dots.
   - No name, name token, control code or line break was changed. Every edited
     line was re-encoded with the story or battle encoder and keeps its row count.
-  - Private build only; not part of the v309 hashes. These edits are part of the
-    v0.91 packet.
+  - These edits are part of the v0.91 packet.
 - Canonical character-name spellings applied across dialogue, battle lines and
   the name tables (`test_canonical_names`).
 - Player name tokens (`{Ichitaka}`, `{Alice}`, `{Unit}`, `{FullName}`,
@@ -147,44 +146,11 @@ were handed out; the other builds were private test builds.
 - Short mission titles for the Clear Data line were drafted only; they are not
   installed.
 
-## v309 - 2026-10-22
+## Before v0.9
 
-- Current release packet. Built from the cumulative working tree; no commits
-  were made between v308 and v309.
-- SHA-256 of the patched ROM: `527e4415c3bdb4c3f068980fb54af29cf19dc692d868d31fb052763d1412e7cb`.
-- Includes the approved 2026-10-22 text package and the graphics fixes recorded
-  below. Release save is a copy of the designated mission-5 save; the original
-  is never modified.
-- v309 is the build the hashes in this v309 section describe; v0.91 supersedes it
-  and has its own hashes in `README.md` and `CHECKSUMS.txt`.
-
-## v308 - 2026-10-22
-
-- Green release: 78 test modules, 469 tests, 0 failures; engine-source,
-  text-presence, overlay and format-slot checks passed.
-- Included the Okusaer, percent/Destroy Gundam, Misato/Mihoshi and Spirit #28
-  changes.
-- Recorded as the last full green release before v309. v309 supersedes it for
-  testing.
-
-## v307, v305, v303
-
-- Not recommended. These builds were red or had stale evidence and were
-  superseded by v308 and v309.
-- Kept only for project history; do not use them as the base for a bug report.
-
-## v306, v304, v301, v302
-
-- Successive text, menu and graphics passes.
-- v304 supplied the previous designated save.
-- v306 added the approved Lulu wording and its related checks.
-
-## Earlier releases
-
-- v295, v276, v273 and v267 were intermediate snapshots used for menu, battle
-  and graphics QA.
-- Older changes are recorded in the project's AI changelog and the per-release
-  notes. Very old release folders have been removed; do not rely on their paths.
+- Numbered private test builds were used for text, menu, battle and graphics QA
+  before the first public release. They were never distributed; do not use them
+  as the base for a bug report.
 
 ## Reporting a problem
 

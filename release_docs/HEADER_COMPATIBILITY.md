@@ -1,6 +1,6 @@
-# v0.92.1 source headers and patch
+# v1.0 source headers and patch
 
-v0.92.1 ships **one patch** for both supported clean dumps: `SRWL_English_v0.92.1.xdelta`.
+v1.0 ships **one patch** for both supported clean dumps: `SRWL_English_v1.0.xdelta`.
 
 | Source dump | Size | SHA-256 | CRC32 |
 | --- | --- | --- | --- |
@@ -29,9 +29,9 @@ and each produced exactly:
 
 | Property | Value |
 | --- | --- |
-| Patched size | 128,499,260 bytes |
-| Patched SHA-256 | `35cdc6aab4b7dc82885a845712c250590f4a533f7ed7f2ddba6352490547fbbe` |
-| Patched CRC32 | `0396A124` |
+| Patched size | 128,484,412 bytes |
+| Patched SHA-256 | `f183ea1562c794e0ac5e39eda0c5fe335f0ed81e20596b15511d55e55a0d2643` |
+| Patched CRC32 | `9C705A37` |
 
 The patch was reapplied to both supported clean dumps; both outputs match the release hash.
 
@@ -39,10 +39,10 @@ Patch values:
 
 | Property | Value |
 | --- | --- |
-| Patch | `SRWL_English_v0.92.1.xdelta` |
-| Size | 7,010,029 bytes |
-| SHA-256 | `ec5a63b215a9e483ee74e7320b2993d8d32e5f69d30f884b89e5824cabcf75a4` |
-| CRC32 | `594A8171` |
+| Patch | `SRWL_English_v1.0.xdelta` |
+| Size | 7,054,495 bytes |
+| SHA-256 | `45612d2a4fef472b5d3bc85de91e95bdb2abc4e727f1cada7ee3088e0c0ced98` |
+| CRC32 | `3263A740` |
 
 Because the patch has no whole-file source checksum, **check the patched output hash** against
 `CHECKSUMS.txt` after applying it. If a patcher offers an option to ignore checksum errors, do not

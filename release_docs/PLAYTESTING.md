@@ -4,11 +4,15 @@ Test the exact patch version named in your packet. Verify the source and patched
 
 ## What to check
 
+- v1.0 battle pop-ups: Critical, Support Attack/Defense badges and banners, map-result pop-ups and the common battle labels should use the approved artwork with the native palette and geometry. Check both animations on and off, and one map result.
+- v1.0 battle names: use a long-named weapon (for example Daiku-Maryu's Zolmanium Piercing Shell) and long unit/pilot names in battle. The name caches must not crash; very long names are truncated on the battle screens by design.
+- v1.0 patch: `SRWL_English_v1.0.xdelta` is 7,054,495 bytes; the patched ROM is 128,484,412 bytes with SHA-256 `f183ea15...55a0d2643`. Both supported dumps must produce that same ROM.
+- Known cosmetic issue: the weapon Type line keeps a trailing comma (for example `CQB, Combo,`). Report it only if it differs from that description; no need to re-report the comma itself.
 - v0.92 anti-piracy: cold boot on DS/3DS or your flashcart and confirm normal stage progression without the anti-piracy game over. No anti-piracy cheat is needed.
 - v0.92 UI: cycle the unit/pilot stat pages, including Kills and Support Defense; check Hit and adjacent sort-heading highlights. Check terrain icons in formation/sortie and map pop-ups in play.
 - v0.92 text: check the renamed sword weapons and the English ending credits, including Story Outline. Old save states are incompatible; normal in-game saves carry over.
 - v0.91 JIT/dynarec: leave JIT on in melonDS Android or WatermelonDS and cold boot through the prologue intro to the first battle. A freeze here was the v0.9 bug; report the emulator version and exact point if it still happens.
-- Size and loading: the v0.92 patched ROM is 128,499,260 bytes (v0.91 was 128,551,996; v0.9 was 234,292,908). Check boot, load and transitions, with no missing or silent game data.
+- Size and loading: the v1.0 patched ROM is 128,484,412 bytes (v0.92 was 128,499,260; v0.91 was 128,551,996; v0.9 was 234,292,908). Check boot, load and transitions, with no missing or silent game data.
 - v0.91 names: Macross Quarter (fortress and assault states, short and full labels), the 26 previously Japanese unit/weapon picture-cell and pilot names, `KATOU ORG. SOLDIER` in its narrow two-row enemy box, and the speaker plate before Kouichi (no leftover first glyph from the previous speaker).
 - v0.91 cartridge-menu title: ROM lists should show **Super Robot Wars L** in all six banner languages.
 - Title/copyright: cold boot through the licensor logos, grey fade, black copyright background, English title and menu. Check the logo border/glow, readable lettering, all 13 copyright attributions and dates, wrapping and clipping on both screens. Exercise New Game, Load and Continue, then leave the title idle through its attract sequence. Record whether your patch includes the separate title-art work.

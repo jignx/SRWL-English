@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v0.92.1
+# Super Robot Taisen L -- English v1.0
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only xdelta patches, checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
 
@@ -8,14 +8,16 @@ I was curious about using AI as a tool in order to translate a SRW game (been a 
 In my opinion, using AI to help translate a game is far harder than I thought. While AI makes it easier, a lot of work is just figuring things out and applying solutions and waiting. I spent the past few weeks wrestling with SRW L and seeing bugs and issues crop up one over another.
 After playing through it a bit and fixing all the bugs I could spot, I feel like this is good enough for a public release and something I'm proud of putting out into the world. Please do let me know if you find any bugs or issues while playing the game. I would be happy to fix them.
 
-## What’s new in v0.92.1
-- Fixed garbage font tiles below Skills, Spirits and Abilities descriptions, including Shield Defense in map Search. The cache allocation fix also prevents the resulting graphics damage after leaving help.
-- Corrected unit identity data: Jack Smith no longer displays Takeminakata; Gaiking no longer displays Godannar. Heavyarms Kai, Dancouga Nova Max God and Quadran with Super Pack also use their correct names. Gaiking the Great retains its correct name.
-- The Kills/Support Defense fix is retained.
+## What's new in v1.0
+- **Approved battle pop-up artwork.** 95 approved round-3 resources are installed with native geometry, palette, raw-PAT, alias and predecessor guards: Critical pop-ups, Support Attack/Defense badges and banners, map-result pop-ups and the common battle labels. Bronze Bell and the shipped-sans **9 PM Don't Be Late** are included.
+- **Battle-name buffer crash fixed.** The weapon, unit and pilot name caches used by battle screens are now bounded copies. Long names are truncated at a character boundary instead of overwriting the adjacent memory, which fixes the crash when Daiku-Maryu used Zolmanium Piercing Shell. No translation or name text was changed.
+- **One patch for both dumps**, as in v0.91/v0.92: the same `.xdelta` applies to the canonical dump and the zeroed extended-header dump and produces the same patched ROM.
 
-This cumulative hotfix includes all v0.92 changes. It passed 640 automated tests and cold-boot emulator checks, including full-roster list selections. The remaining broad menu and route sweeps are deferred; this is still a public playtesting release.
+### Included from v0.92.1
+- Fixed garbage font tiles below Skills, Spirits and Abilities descriptions, including Shield Defense in map Search, and the graphics damage that could follow after leaving help.
+- Corrected unit identity data: Jack Smith no longer displays Takeminakata; Gaiking no longer displays Godannar. Heavyarms Kai, Dancouga Nova Max God and Quadran with Super Pack also use their correct names.
 
-## Included from v0.92
+### Included from v0.92
 - **Anti-piracy game over fixed on DS/3DS and flashcarts.** Anti-piracy checks are fully disabled in the patch; no cheat file is needed.
 - **English ending credits**, including the Story Outline heading.
 - **Weapon and name fixes**, including the Katana/Laser Blade and Ken/Sword splits, Dancou Dangai Sword, Zankitou, Tachi Combo Slash and Heavy Sword.
@@ -47,7 +49,7 @@ The game has been translated, including the ending credits, but has not been pla
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
 ## Download
-Grab `SRWL_English_v0.92.1.xdelta` and `CHECKSUMS.txt` from the [v0.92 release](https://github.com/jignx/SRWL-English/releases/tag/v0.92.1). The same patch works for both known clean dumps.
+Grab `SRWL_English_v1.0.xdelta` and `CHECKSUMS.txt` from the [v1.0 release](https://github.com/jignx/SRWL-English/releases/tag/v1.0). The same patch works for both known clean dumps.
 
 No pre-patched ROMs, please don't ask.
 
@@ -84,9 +86,9 @@ They contain identical game data; only 188 bytes of unused extended-header metad
 1. Check your ROM's SHA-256 against the table above.
 2. Apply the patch to a copy of your dump:
 ```sh
-xdelta3 -d -s clean-jp.nds SRWL_English_v0.92.1.xdelta SRWL_English_v0.92.1.nds
+xdelta3 -d -s clean-jp.nds SRWL_English_v1.0.xdelta SRWL_English_v1.0.nds
 ```
-3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,499,260 bytes with SHA-256 `35cdc6aab4b7dc82885a845712c250590f4a533f7ed7f2ddba6352490547fbbe`.
+3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,484,412 bytes with SHA-256 `f183ea1562c794e0ac5e39eda0c5fe335f0ed81e20596b15511d55e55a0d2643` (CRC32 `9C705A37`).
 4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
 
 Keep checksum validation enabled in your patcher. The patch is encoded so it does not depend on the 188 bytes of extended-header metadata that differ between the two dumps, which is why one file works for both. Because one patch has to cover two sources, it does not carry a whole-file source checksum -- so **always check the patched output** against `CHECKSUMS.txt` (or the hash in step 3). If a patcher reports a target-window checksum mismatch, stop: the source or patch is damaged, so re-check the dump hash and redownload the patch.
@@ -95,10 +97,24 @@ The ROM displays the English ROM-list title. Refresh cached ROM lists after repl
 
 ## Known issues
 - The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
+- **Weapon Type line comma (cosmetic):** combination attacks and some other weapon types show a trailing comma, e.g. `CQB, Combo,`. The shared translated type fragment ends with an ASCII comma and the game's list builder does not strip it. Tracked for the next text/UI pass; it does not affect gameplay.
+- **Long battle names:** the battle name caches are deliberately bounded in v1.0. Very long weapon, unit and pilot names are truncated at a character boundary on those screens; the underlying name text is unchanged.
 - Tested in DeSmuME. Real hardware hasn't been checked.
 - Old save states are incompatible with this update; cold boot and load a normal in-game save. In-game saves carry over.
 
 Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please attach a save. Changes are in the [changelog](release_docs/CHANGELOG.md).
+
+## Report a bug
+Open an issue in the project's issue tracker with a short descriptive title, and include:
+
+- **Version:** the patch version (for v1.0, `SRWL_English_v1.0.xdelta`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
+- **Emulator / hardware:** DeSmuME, melonDS, WatermelonDS, 3DS, DS or flashcart, with the exact version, and whether you cold booted.
+- **JIT/dynarec:** on or off (and the emulator setting used, if any).
+- **What happened:** stage, route choices, speaker or exact menu path, the loaded save slot, expected result and actual result.
+- **Reproducible?** always / sometimes / once, with the numbered button and menu steps to repeat it.
+- **Screenshot:** both DS screens at native resolution, showing the problem (an English description is fine if you cannot capture one).
+
+If possible, attach a normal battery save near the trigger. Do not upload ROMs or pre-patched games.
 
 ## Credits
 - Translation and testing: Jignx, with AI help from ChatGPT (Codex), Claude and DeepSeek. Every change was checked in-game by hand.

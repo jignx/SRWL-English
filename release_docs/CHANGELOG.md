@@ -4,6 +4,38 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.0 - 2026-11-01
+
+- **Approved battle pop-up artwork installed.** 95 approved round-3 resources are installed with
+  predecessor, native-geometry, raw-PAT, alias and palette guards: Critical pop-ups, Support
+  Attack/Defense badges and banners, map-result pop-ups and the common battle labels. Bronze Bell
+  and the shipped-sans **9 PM Don't Be Late** are included. Natural support captures cover
+  animations on/off, badge and banner; Critical and Accuracy Down L1 use controlled native events.
+- **Battle-name buffer crash fixed.** The ov22 weapon, unit and pilot name caches and the ov10
+  list-label records now use bounded copies that stop at a character boundary and always terminate.
+  This fixes the crash when Daiku-Maryu used Zolmanium Piercing Shell, whose 48-byte name
+  overflowed the 33-byte weapon cache and corrupted the caller's stack. The marker-1 compact form
+  is not used in those caches because the battle parser treats bytes below `0x80` as tokens; long
+  names are truncated on those screens instead. No catalog or translation text was changed.
+- **Known issue (cosmetic):** the weapon Type line keeps a trailing comma for combination attacks
+  and some other types, e.g. `CQB, Combo,`. The shared translated type fragment ends with an ASCII
+  comma and the native list builder does not strip it; tracked for the next text/UI pass.
+- **One patch for both dumps.** `SRWL_English_v1.0.xdelta` applies to the canonical dump
+  (`a2b666a2...`, CRC32 `1D040BE8`) and to the zeroed extended-header dump (`1bc8e2e0...`,
+  CRC32 `82804748`), and both produce the same patched ROM. The 188 differing header bytes are
+  filled with junk in the encoding reference and emitted as literals; the source window covers the
+  whole ROM, whole-file source verification is off and target-window checksums stay on.
+  Patch: 7,054,495 bytes, SHA-256
+  `45612d2a4fef472b5d3bc85de91e95bdb2abc4e727f1cada7ee3088e0c0ced98`, CRC32 `3263A740`.
+  Patched ROM: 128,484,412 bytes, SHA-256
+  `f183ea1562c794e0ac5e39eda0c5fe335f0ed81e20596b15511d55e55a0d2643`, CRC32 `9C705A37`.
+  Verified by applying the patch to fresh copies of both dumps.
+- **Build checks:** private build `work/private/20261101_184844/private.nds` and release candidate
+  `releases/v314/SRWL_English_v314.nds` are byte-identical (SHA-256 above); 26,500 UI / 1,705
+  residual / 23,415 battle records, 0 insertion errors, engine sources verified, 12/12 overlay
+  guards. Release-tier suite: 113 modules / 651 tests, all pass. Cold boot in DeSmuME passes
+  (5 captures, smoke frame OK).
+
 ## v0.92.1 - 2026-10-27
 
 - Fixed the shared Skills/Spirits/Abilities help cache allocation, including Shield Defense in map Search and the graphics damage that could follow it.

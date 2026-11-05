@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v1.0
+# Super Robot Taisen L -- English v1.0.1
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only xdelta patches, checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
 
@@ -8,7 +8,14 @@ I was curious about using AI as a tool in order to translate a SRW game (been a 
 In my opinion, using AI to help translate a game is far harder than I thought. While AI makes it easier, a lot of work is just figuring things out and applying solutions and waiting. I spent the past few weeks wrestling with SRW L and seeing bugs and issues crop up one over another.
 After playing through it a bit and fixing all the bugs I could spot, I feel like this is good enough for a public release and something I'm proud of putting out into the world. Please do let me know if you find any bugs or issues while playing the game. I would be happy to fix them.
 
-## What's new in v1.0
+## What's new in v1.0.1
+- **Combination attacks show the right pilots again.** Some battles showed the wrong speaker with an untranslated line, for example Heero during Steel Jeeg's Mach Drill, and left out the yellow Combo label. A long English weapon or unit name could run past a hidden battle slot and change how the game picked the quote. Mach Drill now shows Kenji and Tsubaki with the Combo label, and other battles that picked the wrong quote the same way are fixed too.
+- **Combo label no longer cut off.** The yellow label on combination attacks is fully visible again.
+- **Pilot names on one line.** Twenty-three enemy and NPC names drawn as pictures were split over two lines, and the speaker box cut off the top line. They now fit on one line: the numbered Angels, EVA Unit 01, SOUND ONLY, NERV Agent and NERV Staff, Neos Gold and Darius XVII keep their names, and seven longer ones are shortened to fit (Unk. Soldr, Logos Man, UN Officer, UN Soldier, Vajra Q., B. Galaxy, MP Machina).
+- **Godannar names.** "Go Dannar" is now **Godannar** throughout, and the Go-Okusaer and Neo-Okusaer names now match the Japanese.
+- **Clearer list menus.** On the Assigned Units, Pilot Abilities, Unit Stats and Skill Parts lists, column headers now use short labels that fit their columns (S.Atk, S.Def, Arm, Hit, Left), rows with no level keep their columns lined up, and the ability column shows an English marker instead of a Japanese one.
+
+### Included from v1.0
 - **Approved battle pop-up artwork.** 95 approved round-3 resources are installed with native geometry, palette, raw-PAT, alias and predecessor guards: Critical pop-ups, Support Attack/Defense badges and banners, map-result pop-ups and the common battle labels. Bronze Bell and the shipped-sans **9 PM Don't Be Late** are included.
 - **Battle-name buffer crash fixed.** The weapon, unit and pilot name caches used by battle screens are now bounded copies. Long names are truncated at a character boundary instead of overwriting the adjacent memory, which fixes the crash when Daiku-Maryu used Zolmanium Piercing Shell. No translation or name text was changed.
 - **One patch for both dumps**, as in v0.91/v0.92: the same `.xdelta` applies to the canonical dump and the zeroed extended-header dump and produces the same patched ROM.
@@ -49,7 +56,7 @@ The game has been translated, including the ending credits, but has not been pla
 - Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
 
 ## Download
-Grab `SRWL_English_v1.0.xdelta` and `CHECKSUMS.txt` from the [v1.0 release](https://github.com/jignx/SRWL-English/releases/tag/v1.0). The same patch works for both known clean dumps.
+Grab `SRWL_English_v1.0.1.xdelta` and `CHECKSUMS.txt` from the [v1.0.1 release](https://github.com/jignx/SRWL-English/releases/tag/v1.0.1). The same patch works for both known clean dumps.
 
 No pre-patched ROMs, please don't ask.
 
@@ -86,9 +93,9 @@ They contain identical game data; only 188 bytes of unused extended-header metad
 1. Check your ROM's SHA-256 against the table above.
 2. Apply the patch to a copy of your dump:
 ```sh
-xdelta3 -d -s clean-jp.nds SRWL_English_v1.0.xdelta SRWL_English_v1.0.nds
+xdelta3 -d -s clean-jp.nds SRWL_English_v1.0.1.xdelta SRWL_English_v1.0.1.nds
 ```
-3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,484,412 bytes with SHA-256 `f183ea1562c794e0ac5e39eda0c5fe335f0ed81e20596b15511d55e55a0d2643` (CRC32 `9C705A37`).
+3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,485,436 bytes with SHA-256 `648b7b6c918e10cc62e6dc7fbe690b71bb24d011acc2b18d4f6e7177fa4e9031` (CRC32 `EF8329B6`).
 4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
 
 Keep checksum validation enabled in your patcher. The patch is encoded so it does not depend on the 188 bytes of extended-header metadata that differ between the two dumps, which is why one file works for both. Because one patch has to cover two sources, it does not carry a whole-file source checksum -- so **always check the patched output** against `CHECKSUMS.txt` (or the hash in step 3). If a patcher reports a target-window checksum mismatch, stop: the source or patch is damaged, so re-check the dump hash and redownload the patch.
@@ -98,7 +105,7 @@ The ROM displays the English ROM-list title. Refresh cached ROM lists after repl
 ## Known issues
 - The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
 - **Weapon Type line comma (cosmetic):** combination attacks and some other weapon types show a trailing comma, e.g. `CQB, Combo,`. The shared translated type fragment ends with an ASCII comma and the game's list builder does not strip it. Tracked for the next text/UI pass; it does not affect gameplay.
-- **Long battle names:** the battle name caches are deliberately bounded in v1.0. Very long weapon, unit and pilot names are truncated at a character boundary on those screens; the underlying name text is unchanged.
+- **Long battle names:** the battle name caches are deliberately bounded since v1.0. Very long weapon, unit and pilot names are truncated at a character boundary on those screens; the underlying name text is unchanged.
 - Tested in DeSmuME. Real hardware hasn't been checked.
 - Old save states are incompatible with this update; cold boot and load a normal in-game save. In-game saves carry over.
 
@@ -107,7 +114,7 @@ Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please a
 ## Report a bug
 Open an issue in the project's issue tracker with a short descriptive title, and include:
 
-- **Version:** the patch version (for v1.0, `SRWL_English_v1.0.xdelta`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
+- **Version:** the patch version (for v1.0.1, `SRWL_English_v1.0.1.xdelta`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
 - **Emulator / hardware:** DeSmuME, melonDS, WatermelonDS, 3DS, DS or flashcart, with the exact version, and whether you cold booted.
 - **JIT/dynarec:** on or off (and the emulator setting used, if any).
 - **What happened:** stage, route choices, speaker or exact menu path, the loaded save slot, expected result and actual result.

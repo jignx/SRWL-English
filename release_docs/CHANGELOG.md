@@ -4,6 +4,17 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.0.1 - 2026-11-05
+
+- **Wrong battle quotes fixed.** At battle setup the game copied each weapon and unit name into fixed slots with no length limit. A long English name could run past the last weapon slot into the battle flags beside it, so the game picked the wrong quote situation. Steel Jeeg's Mach Drill showed Heero with an untranslated line and no Combo label; it now shows Kenji and Tsubaki with the label. Other battles with the same overrun are fixed too. These two copies now stop at the slot limit, like the ones fixed in v1.0. No translation text was changed.
+- **Combo label no longer cut off.** The yellow combination label art fits its window.
+- **One-line picture names.** 23 picture-drawn names no longer lose their top line in the speaker box: the numbered Angels, EVA Unit 01, SOUND ONLY, NERV Agent/Staff, Neos Gold and Darius XVII keep their wording, and seven are shortened (Unk. Soldr, Logos Man, UN Officer, UN Soldier, Vajra Q., B. Galaxy, MP Machina).
+- **Godannar names.** "Go Dannar" is now Godannar, and Go-Okusaer and Neo-Okusaer match the Japanese.
+- **List menus.** Short column headers that fit (S.Atk, S.Def, Arm, Hit, Left), level-less rows keep their columns aligned, and the ability column shows an English marker.
+- **Known issue (cosmetic):** the weapon Type line still keeps a trailing comma, e.g. `CQB, Combo,`.
+- **Patch:** `SRWL_English_v1.0.1.xdelta`, 7,043,158 bytes, SHA-256 `61aaa5880eec76c25086888da95236180b2291de2ec0b6a5981859f45327284e`, CRC32 `C86F802B`. One patch for both supported dumps. Patched ROM: 128,485,436 bytes, SHA-256 `648b7b6c918e10cc62e6dc7fbe690b71bb24d011acc2b18d4f6e7177fa4e9031`, CRC32 `EF8329B6`. Verified by applying the patch to fresh copies of both dumps.
+- **Build checks:** 26,500 UI / 1,705 residual / 23,415 battle records, 0 insertion errors, engine sources verified, 12/12 overlay guards. Release-tier suite: 116 modules / 697 tests, all pass. Cold boot in DeSmuME passes.
+
 ## v1.0 - 2026-11-01
 
 - **Approved battle pop-up artwork installed.** 95 approved round-3 resources are installed with

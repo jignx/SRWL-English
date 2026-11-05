@@ -1,5 +1,5 @@
-# Super Robot Taisen L English v1.0
+# Super Robot Taisen L English v1.0.1
 
 See the [current README](../README.md) for features, source requirements, patching instructions, credits and known limitations.
 
-Use [CHECKSUMS.txt](../CHECKSUMS.txt) for the exact v1.0 patch, clean sources and patched-output hashes. Earlier release hashes do not describe the v1.0 output.
+Use [CHECKSUMS.txt](../CHECKSUMS.txt) for the exact v1.0.1 patch, clean sources and patched-output hashes. Earlier release hashes do not describe the v1.0.1 output.

@@ -1,6 +1,6 @@
-"""Create and verify the Super Robot Wars L English v1.0 xdelta patch.
+"""Create and verify the Super Robot Wars L English v1.0.1 xdelta patch.
 
-v1.0 uses one patch for both supported clean dump variants. The 188 bytes that
+v1.0.1 uses one patch for both supported clean dump variants. The 188 bytes that
 differ between the canonical dump and the zeroed-extended-header dump are replaced
 with deterministic junk in the encoding reference, so xdelta cannot copy those
 regions and emits the target bytes as literals there. Whole-file source
@@ -11,7 +11,7 @@ copies of both real dumps and each output is checked against the release ROM.
 Requires xdelta3 on PATH (or pass --xdelta PATH).
 
 Usage:
-    python make_patch.py clean-source.nds SRWL_English_v1.0.nds SRWL_English_v1.0.xdelta
+    python make_patch.py clean-source.nds SRWL_English_v1.0.1.nds SRWL_English_v1.0.1.xdelta
 """
 import argparse
 import hashlib
@@ -25,9 +25,9 @@ SOURCE_SIZE = 134217728
 SOURCE_SHA256 = "a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f"
 ALTERNATE_SHA256 = "1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f"
 EXTENDED_METADATA = ((0x33c, 0x350), (0x378, 0x3a0), (0xf80, 0x1000))
-RELEASE_SIZE = 128484412
-RELEASE_SHA256 = "f183ea1562c794e0ac5e39eda0c5fe335f0ed81e20596b15511d55e55a0d2643"
-RELEASE_CRC32 = "9C705A37"
+RELEASE_SIZE = 128485436
+RELEASE_SHA256 = "648b7b6c918e10cc62e6dc7fbe690b71bb24d011acc2b18d4f6e7177fa4e9031"
+RELEASE_CRC32 = "EF8329B6"
 SOURCE_WINDOW = 268435456
 
 
@@ -44,10 +44,10 @@ def digest(path):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("source", type=Path, help="legally dumped clean Japanese ROM (canonical header)")
-    parser.add_argument("built", type=Path, help="the released English ROM (SRWL_English_v1.0.nds)")
+    parser.add_argument("built", type=Path, help="the released English ROM (SRWL_English_v1.0.1.nds)")
     parser.add_argument("output", type=Path, help="new .xdelta output file")
     parser.add_argument("--xdelta", default="xdelta3", help="xdelta3 executable")
-    parser.add_argument("--checksums", type=Path, help="new v1.0 checksum manifest")
+    parser.add_argument("--checksums", type=Path, help="new v1.0.1 checksum manifest")
     parser.add_argument("--secondary", choices=("none", "djw", "lzma"), default="lzma",
                         help="standard xdelta secondary compression (default: lzma)")
     args = parser.parse_args(argv)
@@ -64,7 +64,7 @@ def main(argv=None):
         if source.stat().st_size != SOURCE_SIZE or digest(source)[0] != SOURCE_SHA256:
             raise ValueError("Source ROM is not the supported canonical clean dump.")
         if (built.stat().st_size, digest(built)[0]) != (RELEASE_SIZE, RELEASE_SHA256):
-            raise ValueError("Built ROM is not the v1.0 release ROM (size/SHA-256 mismatch).")
+            raise ValueError("Built ROM is not the v1.0.1 release ROM (size/SHA-256 mismatch).")
         executable = shutil.which(args.xdelta)
         if not executable:
             raise ValueError("xdelta3 was not found; install it or pass --xdelta.")
@@ -121,7 +121,7 @@ def main(argv=None):
             patch_size = output.stat().st_size
         if args.checksums:
             lines = [
-                "Super Robot Wars L English v1.0", "",
+                "Super Robot Wars L English v1.0.1", "",
                 "One patch for both supported source headers (header-neutral encoding).",
                 "Patch reapplication: PASS on both dumps; identical output hash below.", "",
             ]
@@ -135,7 +135,7 @@ def main(argv=None):
             lines.extend(["Translation patch: " + output.name,
                           "Size: " + str(patch_size) + " bytes",
                           "SHA-256: " + patch_sha, "CRC32: " + patch_crc, ""])
-            lines.extend(["Patched ROM (not distributed): SRWL_English_v1.0.nds",
+            lines.extend(["Patched ROM (not distributed): SRWL_English_v1.0.1.nds",
                           "Size: " + str(RELEASE_SIZE) + " bytes",
                           "SHA-256: " + RELEASE_SHA256, "CRC32: " + RELEASE_CRC32, ""])
             args.checksums.write_text("\n".join(lines), encoding="utf8", newline="\n")

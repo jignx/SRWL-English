@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v1.1
+# Super Robot Taisen L -- English v1.1.1
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only patches (an offline HTML patcher and a .bps), checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
 
@@ -8,7 +8,13 @@ I was curious about using AI as a tool in order to translate a SRW game (been a 
 In my opinion, using AI to help translate a game is far harder than I thought. While AI makes it easier, a lot of work is just figuring things out and applying solutions and waiting. I spent the past few weeks wrestling with SRW L and seeing bugs and issues crop up one over another.
 After playing through it a bit and fixing all the bugs I could spot, I feel like this is good enough for a public release and something I'm proud of putting out into the world. Please do let me know if you find any bugs or issues while playing the game. I would be happy to fix them.
 
-## What's new in v1.1
+## What's new in v1.1.1
+A small follow-up to v1.1. Some of you said the narrow font looked rough, especially the capital W and Y, so we redrew the worst letters. We also fixed battle quotes that ran past the edge of the box.
+
+- Cleaner letters in story scenes and battle quotes. W, M, Y and T are redrawn, capitals and numbers are a pixel shorter so they sit better next to lowercase, and g, a, s, j, K, N, S, X and 0 are tidied up. Every letter keeps its old width, so no line moved.
+- Fixed battle quotes that ran past the right edge of the box and left a stray letter on the next row, like Daiya's "We're giving it everything we've got!" in a Gaiking battle. About 170 pages were re-broken to fit.
+
+### Included from v1.1
 The big one this time is space. We got a narrower font working in story scenes and battle quotes, so each line holds a lot more text than before. That let us go back through the script and fix the lines we'd had to cut down to make them fit.
 
 - More text fits on each line in story scenes and battle quotes, so far fewer lines get cut short or split in odd places.
@@ -19,7 +25,7 @@ The big one this time is space. We got a narrower font working in story scenes a
 - Intuition and Resupply no longer show up as blank slots on the Pilot Stats page.
 - New browser patcher, `SRWL_English_v1.1.html`. It works offline and nothing gets uploaded, so you don't need a separate patching program.
 
-### Before and after
+#### Before and after
 v1.0.1 on the left, v1.1 on the right. Same scene, same save.
 
 ![Ichitaka's line has room for "Kujo" again](screenshots/compare-story-1.png)
@@ -75,7 +81,7 @@ The game has been translated, including the ending credits, but has not been pla
 - Distributed as an offline HTML patcher and a .bps patch: apply it to your own clean Japanese ROM
 
 ## Download
-Grab `SRWL_English_v1.1.html` (easiest), or `SRWL_English_v1.1.bps` if you prefer your own patcher, plus `CHECKSUMS.txt` from the [v1.1 release](https://github.com/jignx/SRWL-English/releases/tag/v1.1).
+Grab `SRWL_English_v1.1.1.html` (easiest), or `SRWL_English_v1.1.1.bps` if you prefer your own patcher, plus `CHECKSUMS.txt` from the [v1.1.1 release](https://github.com/jignx/SRWL-English/releases/tag/v1.1.1).
 
 No pre-patched ROMs, please don't ask.
 
@@ -110,13 +116,13 @@ They contain identical game data; only 188 bytes of unused extended-header metad
 
 ## How to patch
 **HTML patcher (easiest, both dumps):**
-1. Download `SRWL_English_v1.1.html` and open it in your browser. It works offline and nothing is uploaded.
-2. Choose your clean Japanese ROM. The page checks it (restoring trimmed or padded dumps to full size first), patches it, verifies the result and saves `SRWL_English_v1.1.nds`. Use the link on the page if the download doesn't start.
+1. Download `SRWL_English_v1.1.1.html` and open it in your browser. It works offline and nothing is uploaded.
+2. Choose your clean Japanese ROM. The page checks it (restoring trimmed or padded dumps to full size first), patches it, verifies the result and saves `SRWL_English_v1.1.1.nds`. Use the link on the page if the download doesn't start.
 
 **BPS patch (canonical dump):**
 1. Check your ROM's SHA-256 matches the canonical dump above.
-2. Apply `SRWL_English_v1.1.bps` to a copy of it with Flips or another BPS patcher.
-3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,452,668 bytes with SHA-256 `d6b89851a743d3526026fc3151df4501abeb022fd9dec5b3f2483e3cf891fcc7` (CRC32 `2D97804E`).
+2. Apply `SRWL_English_v1.1.1.bps` to a copy of it with Flips or another BPS patcher.
+3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,452,668 bytes with SHA-256 `dd9f3b4424c0ec531e4093d57b65bbae8517425087cf1439b3b4f8b37dcb2dfd` (CRC32 `73FDBF3D`).
 
 If your dump has the zeroed extended header, BPS patchers will reject it; use the HTML patcher, which fixes the header for you.
 
@@ -128,7 +134,6 @@ The ROM displays the English ROM-list title. Refresh cached ROM lists after repl
 - The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
 - **Weapon Type line comma (cosmetic):** combination attacks and some other weapon types show a trailing comma, e.g. `CQB, Combo,`. The shared translated type fragment ends with an ASCII comma and the game's list builder does not strip it. Tracked for the next text/UI pass; it does not affect gameplay.
 - **Long battle names:** the battle name caches are deliberately bounded since v1.0. Very long weapon, unit and pilot names are truncated at a character boundary on those screens; the underlying name text is unchanged.
-- A few long battle lines can still run past the edge of the box. One we know about is Daiya's "Take a good look! We're giving it everything we've got!" in a Gaiking battle.
 - Old save states are incompatible with this update; cold boot and load a normal in-game save. In-game saves carry over.
 
 Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please attach a save. Changes are in the [changelog](release_docs/CHANGELOG.md).
@@ -136,7 +141,7 @@ Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please a
 ## Report a bug
 Open an issue in the project's issue tracker with a short descriptive title, and include:
 
-- **Version:** the patch version (for v1.1, `SRWL_English_v1.1`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
+- **Version:** the patch version (for v1.1.1, `SRWL_English_v1.1.1`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
 - **Emulator / hardware:** DeSmuME, melonDS, WatermelonDS, 3DS, DS or flashcart, with the exact version, and whether you cold booted.
 - **JIT/dynarec:** on or off (and the emulator setting used, if any).
 - **What happened:** stage, route choices, speaker or exact menu path, the loaded save slot, expected result and actual result.

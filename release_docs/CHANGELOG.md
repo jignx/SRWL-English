@@ -4,6 +4,13 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.1.1 - 2026-11-13
+
+- **Font polish.** Redrew W, M, Y and T in the narrow story/battle font, made capitals, digits and tall lowercase letters one pixel shorter, and tidied g, a, s, j, K, N, S, X and 0. Every letter keeps its width, so no line breaks changed.
+- **Battle quotes past the box edge fixed.** Battle quote rows now leave room for the box's 4-pixel indent; about 170 pages that spilled a letter onto the next row are re-broken, including Daiya's "We're giving it everything we've got!" in a Gaiking battle.
+- **Known issue (cosmetic):** the weapon Type line still keeps a trailing comma, e.g. `CQB, Combo,`.
+- **Patches:** `SRWL_English_v1.1.1.html`, 40,941,897 bytes, SHA-256 `a17fd39d5e1cec388d478065a360aade266d5a13df89795592dc4346c52a3c0d`; `SRWL_English_v1.1.1.bps`, 30,697,245 bytes, SHA-256 `73b7dd1bd2a086caf8bc9dec3ca031160cb693bf30526d07485ce9e46e658f96`, CRC32 `2144DF1C`. Patched ROM: 128,452,668 bytes, SHA-256 `dd9f3b4424c0ec531e4093d57b65bbae8517425087cf1439b3b4f8b37dcb2dfd`, CRC32 `73FDBF3D`.
+
 ## v1.1 - 2026-11-13
 
 - **More text per line.** A narrower story/battle font and engine changes let story and battle text use the full width of the text box. Lines that had been trimmed to fit the old width are restored to their full wording.

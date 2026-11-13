@@ -1,8 +1,8 @@
-Super Robot Wars L English v1.1
+Super Robot Wars L English v1.1.1
 
 Two patches give the same patched ROM:
-- SRWL_English_v1.1.html: offline browser patcher, accepts both clean dumps below.
-- SRWL_English_v1.1.bps: standard BPS patch for the canonical-header dump.
+- SRWL_English_v1.1.1.html: offline browser patcher, accepts both clean dumps below.
+- SRWL_English_v1.1.1.bps: standard BPS patch for the canonical-header dump.
 Both verified by patching fresh copies of the clean dumps; identical output hash below.
 
 Clean Japanese ROM (canonical header, not distributed): clean.nds
@@ -15,17 +15,17 @@ Size: 134217728 bytes
 SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
-HTML patcher: SRWL_English_v1.1.html
-Size: 40727619 bytes
-SHA-256: 6b2153126f5ead7b1435efc742a70cd5d2ba50e91c59d4d586fec34a104a8ac4
-CRC32: 69B5FBAC
+HTML patcher: SRWL_English_v1.1.1.html
+Size: 40941897 bytes
+SHA-256: a17fd39d5e1cec388d478065a360aade266d5a13df89795592dc4346c52a3c0d
+CRC32: 1A35A256
 
-BPS patch: SRWL_English_v1.1.bps
-Size: 30536539 bytes
-SHA-256: dfa59203a10abc991bb7513aa96dcfba07769131efae0b70f7df6aff967a879c
+BPS patch: SRWL_English_v1.1.1.bps
+Size: 30697245 bytes
+SHA-256: 73b7dd1bd2a086caf8bc9dec3ca031160cb693bf30526d07485ce9e46e658f96
 CRC32: 2144DF1C
 
-Patched ROM (not distributed): SRWL_English_v1.1.nds
+Patched ROM (not distributed): SRWL_English_v1.1.1.nds
 Size: 128452668 bytes
-SHA-256: d6b89851a743d3526026fc3151df4501abeb022fd9dec5b3f2483e3cf891fcc7
-CRC32: 2D97804E
+SHA-256: dd9f3b4424c0ec531e4093d57b65bbae8517425087cf1439b3b4f8b37dcb2dfd
+CRC32: 73FDBF3D

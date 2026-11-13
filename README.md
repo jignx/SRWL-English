@@ -1,6 +1,6 @@
-# Super Robot Taisen L -- English v1.0.1
+# Super Robot Taisen L -- English v1.1
 
-An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only xdelta patches, checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
+An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. This is a public playtesting release. Only patches (an offline HTML patcher and a .bps), checksums and documentation are distributed; supply your own clean Japanese cartridge dump.
 
 ## Introduction
 Hello,
@@ -8,7 +8,19 @@ I was curious about using AI as a tool in order to translate a SRW game (been a 
 In my opinion, using AI to help translate a game is far harder than I thought. While AI makes it easier, a lot of work is just figuring things out and applying solutions and waiting. I spent the past few weeks wrestling with SRW L and seeing bugs and issues crop up one over another.
 After playing through it a bit and fixing all the bugs I could spot, I feel like this is good enough for a public release and something I'm proud of putting out into the world. Please do let me know if you find any bugs or issues while playing the game. I would be happy to fix them.
 
-## What's new in v1.0.1
+## What's new in v1.1
+The biggest change: we found a way to fit more text on each line, in both story scenes and battle quotes. That extra room let us rework the script so it reads much more naturally.
+
+- **More text per line.** A new narrower font and engine changes let story and battle text use the full width of the text box, so each line holds noticeably more text than before. Far fewer lines are trimmed or split awkwardly, and lines that had been shortened to fit the old width are back to their full wording.
+- **Flow pass, made possible by the extra room.** About 2,600 story and battle lines were reviewed against the Japanese and reworked where the English read stiffly or had to drop meaning to fit. Forms of address are more consistent, and leftover "-san" honorifics in battle are gone.
+- **Battle quote fixes.** Battle quotes that showed the wrong line, lost part of their meaning or broke in odd places have been corrected, including Saruwatari's taunt and the "War of the Giants" line.
+- **Name pass.** Did another name pass, so character and speaker names match the Japanese more closely.
+- **New HTML patcher.** Patch the game right in your browser with `SRWL_English_v1.1.html`: no separate patching program needed. It works offline, uploads nothing, checks your ROM and the result, and handles both supported Japanese dumps.
+- **Restored ellipses.** Pauses (…) that were dropped from the Japanese have been put back in about 800 lines.
+- **More English graphics.** Fifteen more pop-ups are now in English: Iczer Robo Combine/Split, Mazin Power, Steel Power, Zero System, Link/Unlink (EVA umbilical cable) and Ammo Refill.
+- **Pilot Stats page.** The CQB, RNG and SKL column headers now line up with their numbers, the "Q" in CQB is clearer, and the Intuition and Resupply Spirits no longer show as blank slots.
+
+### Included from v1.0.1
 - **Combination attacks show the right pilots again.** Some battles showed the wrong speaker with an untranslated line, for example Heero during Steel Jeeg's Mach Drill, and left out the yellow Combo label. A long English weapon or unit name could run past a hidden battle slot and change how the game picked the quote. Mach Drill now shows Kenji and Tsubaki with the Combo label, and other battles that picked the wrong quote the same way are fixed too.
 - **Combo label no longer cut off.** The yellow label on combination attacks is fully visible again.
 - **Pilot names on one line.** Twenty-three enemy and NPC names drawn as pictures were split over two lines, and the speaker box cut off the top line. They now fit on one line: the numbered Angels, EVA Unit 01, SOUND ONLY, NERV Agent and NERV Staff, Neos Gold and Darius XVII keep their names, and seven longer ones are shortened to fit (Unk. Soldr, Logos Man, UN Officer, UN Soldier, Vajra Q., B. Galaxy, MP Machina).
@@ -53,10 +65,10 @@ The game has been translated, including the ending credits, but has not been pla
 - JIT/dynarec on is supported on melonDS Android, WatermelonDS and other DS emulators
 - 128.5 MB ROM (down from 234 MB), so it loads faster from storage
 - All remaining Japanese picture-cell names translated, including Macross Quarter; one-line `KATOU ORG. SOLDIER` label; stray speaker glyph before Kouichi fixed
-- Distributed as an .xdelta patch: apply it to your own clean Japanese ROM
+- Distributed as an offline HTML patcher and a .bps patch: apply it to your own clean Japanese ROM
 
 ## Download
-Grab `SRWL_English_v1.0.1.xdelta` and `CHECKSUMS.txt` from the [v1.0.1 release](https://github.com/jignx/SRWL-English/releases/tag/v1.0.1). The same patch works for both known clean dumps.
+Grab `SRWL_English_v1.1.html` (easiest), or `SRWL_English_v1.1.bps` if you prefer your own patcher, plus `CHECKSUMS.txt` from the [v1.1 release](https://github.com/jignx/SRWL-English/releases/tag/v1.1).
 
 No pre-patched ROMs, please don't ask.
 
@@ -80,25 +92,28 @@ Captured in DeSmuME, showing both Nintendo DS screens at their original resoluti
 | ![Goh's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Alto's battle animation and English dialogue](screenshots/battle-animation.png) |
 
 ## What you need
-A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known, and the one patch applies to both:
+A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known. The HTML patcher accepts both; the .bps applies to the canonical dump:
 
 | Dump | SHA-256 | CRC32 |
 | --- | --- | --- |
 | Canonical | `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f` | `1D040BE8` |
 | Zeroed extended-header metadata | `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f` | `82804748` |
 
-They contain identical game data; only 188 bytes of unused extended-header metadata in the first 4 KiB differ. If your dump matches neither, the patch won't apply cleanly. Keep checksum validation enabled: the patch checks its target windows, so a corrupted or modified source is refused instead of producing a broken ROM.
+They contain identical game data; only 188 bytes of unused extended-header metadata in the first 4 KiB differ. If your dump matches neither, the patch won't apply.
 
 ## How to patch
-1. Check your ROM's SHA-256 against the table above.
-2. Apply the patch to a copy of your dump:
-```sh
-xdelta3 -d -s clean-jp.nds SRWL_English_v1.0.1.xdelta SRWL_English_v1.0.1.nds
-```
-3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,485,436 bytes with SHA-256 `648b7b6c918e10cc62e6dc7fbe690b71bb24d011acc2b18d4f6e7177fa4e9031` (CRC32 `EF8329B6`).
-4. Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
+**HTML patcher (easiest, both dumps):**
+1. Download `SRWL_English_v1.1.html` and open it in your browser. It works offline and nothing is uploaded.
+2. Choose your clean Japanese ROM. The page checks it (restoring trimmed or padded dumps to full size first), patches it, verifies the result and saves `SRWL_English_v1.1.nds`. Use the link on the page if the download doesn't start.
 
-Keep checksum validation enabled in your patcher. The patch is encoded so it does not depend on the 188 bytes of extended-header metadata that differ between the two dumps, which is why one file works for both. Because one patch has to cover two sources, it does not carry a whole-file source checksum -- so **always check the patched output** against `CHECKSUMS.txt` (or the hash in step 3). If a patcher reports a target-window checksum mismatch, stop: the source or patch is damaged, so re-check the dump hash and redownload the patch.
+**BPS patch (canonical dump):**
+1. Check your ROM's SHA-256 matches the canonical dump above.
+2. Apply `SRWL_English_v1.1.bps` to a copy of it with Flips or another BPS patcher.
+3. Check the patched ROM against `CHECKSUMS.txt`. It should be 128,452,668 bytes with SHA-256 `d6b89851a743d3526026fc3151df4501abeb022fd9dec5b3f2483e3cf891fcc7` (CRC32 `2D97804E`).
+
+If your dump has the zeroed extended header, BPS patchers will reject it; use the HTML patcher, which fixes the header for you.
+
+Back up your save, then start the game fresh. Don't load old emulator savestates, as they can bring back old text and graphics.
 
 The ROM displays the English ROM-list title. Refresh cached ROM lists after replacing the ROM. For an existing 3DS HOME Menu forwarder, recreate the forwarder from the new ROM to update its stored title.
 
@@ -106,7 +121,6 @@ The ROM displays the English ROM-list title. Refresh cached ROM lists after repl
 - The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
 - **Weapon Type line comma (cosmetic):** combination attacks and some other weapon types show a trailing comma, e.g. `CQB, Combo,`. The shared translated type fragment ends with an ASCII comma and the game's list builder does not strip it. Tracked for the next text/UI pass; it does not affect gameplay.
 - **Long battle names:** the battle name caches are deliberately bounded since v1.0. Very long weapon, unit and pilot names are truncated at a character boundary on those screens; the underlying name text is unchanged.
-- Tested in DeSmuME. Real hardware hasn't been checked.
 - Old save states are incompatible with this update; cold boot and load a normal in-game save. In-game saves carry over.
 
 Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please attach a save. Changes are in the [changelog](release_docs/CHANGELOG.md).
@@ -114,7 +128,7 @@ Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please a
 ## Report a bug
 Open an issue in the project's issue tracker with a short descriptive title, and include:
 
-- **Version:** the patch version (for v1.0.1, `SRWL_English_v1.0.1.xdelta`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
+- **Version:** the patch version (for v1.1, `SRWL_English_v1.1`) and the patched ROM's SHA-256 from `CHECKSUMS.txt`.
 - **Emulator / hardware:** DeSmuME, melonDS, WatermelonDS, 3DS, DS or flashcart, with the exact version, and whether you cold booted.
 - **JIT/dynarec:** on or off (and the emulator setting used, if any).
 - **What happened:** stage, route choices, speaker or exact menu path, the loaded save slot, expected result and actual result.
@@ -127,6 +141,6 @@ If possible, attach a normal battery save near the trigger. Do not upload ROMs o
 - Translation and testing: Jignx, with AI help from ChatGPT (Codex), Claude and DeepSeek. Every change was checked in-game by hand.
 - Terminology reference: Akurasu
 - Fonts: GohuFont by Hugo Chargois (WTFPL), adapted to a proportional font; Roboto Condensed by the Roboto Project Authors (SIL OFL 1.1)
-- Tools: DeSmuME, xdelta
+- Tools: DeSmuME, xdelta, BPS
 
 Super Robot Taisen L and all its characters, art and music belong to their respective rights holders. This project isn't affiliated with or endorsed by them. Please don't share ROMs or pre-patched games.

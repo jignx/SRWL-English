@@ -4,6 +4,18 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.1 - 2026-11-13
+
+- **More text per line.** A narrower story/battle font and engine changes let story and battle text use the full width of the text box. Lines that had been trimmed to fit the old width are restored to their full wording.
+- **Flow pass.** About 2,600 story and battle lines reworked against the Japanese using the extra room; forms of address made consistent and leftover battle "-san" honorifics removed.
+- **Battle quote fixes**, including Saruwatari's taunt and the "War of the Giants" line break.
+- **Name pass.** Another pass so character and speaker names match the Japanese more closely.
+- **Restored ellipses** in about 800 lines.
+- **More English graphics:** 15 more pop-ups (Iczer Robo Combine/Split, Mazin Power, Steel Power, Zero System, Link/Unlink, Ammo Refill).
+- **Pilot Stats:** CQB/RNG/SKL headers aligned, clearer Q glyph, Intuition and Resupply Spirit slots no longer blank.
+- **New offline HTML patcher** (both dumps) alongside a standard BPS patch (canonical dump).
+- **Known issue (cosmetic):** the weapon Type line still keeps a trailing comma, e.g. `CQB, Combo,`.
+- **Patches:** `SRWL_English_v1.1.html`, 40,727,619 bytes, SHA-256 `6b2153126f5ead7b1435efc742a70cd5d2ba50e91c59d4d586fec34a104a8ac4`; `SRWL_English_v1.1.bps`, 30,536,539 bytes, SHA-256 `dfa59203a10abc991bb7513aa96dcfba07769131efae0b70f7df6aff967a879c`, CRC32 `2144DF1C`. Patched ROM: 128,452,668 bytes, SHA-256 `d6b89851a743d3526026fc3151df4501abeb022fd9dec5b3f2483e3cf891fcc7`, CRC32 `2D97804E`. Verified on hardware and by patching fresh copies of the clean dumps.
 ## v1.0.1 - 2026-11-05
 
 - **Wrong battle quotes fixed.** At battle setup the game copied each weapon and unit name into fixed slots with no length limit. A long English name could run past the last weapon slot into the battle flags beside it, so the game picked the wrong quote situation. Steel Jeeg's Mach Drill showed Heero with an untranslated line and no Combo label; it now shows Kenji and Tsubaki with the label. Other battles with the same overrun are fixed too. These two copies now stop at the slot limit, like the ones fixed in v1.0. No translation text was changed.

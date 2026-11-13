@@ -10,3 +10,5 @@ __pycache__/
 *.py[cod]
 # Patch binaries are distributed through GitHub release assets.
 *.xdelta
+*.bps
+/SRWL_English_*.html

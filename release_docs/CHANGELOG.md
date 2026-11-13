@@ -11,8 +11,8 @@ were handed out; the other builds were private test builds.
 - **Battle quote fixes**, including Saruwatari's taunt and the "War of the Giants" line break.
 - **Name pass.** Another pass so character and speaker names match the Japanese more closely.
 - **Restored ellipses** in about 800 lines.
-- **More English graphics:** 15 more pop-ups (Iczer Robo Combine/Split, Mazin Power, Steel Power, Zero System, Link/Unlink, Ammo Refill).
-- **Pilot Stats:** CQB/RNG/SKL headers aligned, clearer Q glyph, Intuition and Resupply Spirit slots no longer blank.
+- **Pilot Stats:** Intuition and Resupply Spirit slots no longer blank.
+- **Known issue:** a few long battle lines can still run past the edge of the box, e.g. Daiya's "Take a good look! We're giving it everything we've got!" in a Gaiking battle.
 - **New offline HTML patcher** (both dumps) alongside a standard BPS patch (canonical dump).
 - **Known issue (cosmetic):** the weapon Type line still keeps a trailing comma, e.g. `CQB, Combo,`.
 - **Patches:** `SRWL_English_v1.1.html`, 40,727,619 bytes, SHA-256 `6b2153126f5ead7b1435efc742a70cd5d2ba50e91c59d4d586fec34a104a8ac4`; `SRWL_English_v1.1.bps`, 30,536,539 bytes, SHA-256 `dfa59203a10abc991bb7513aa96dcfba07769131efae0b70f7df6aff967a879c`, CRC32 `2144DF1C`. Patched ROM: 128,452,668 bytes, SHA-256 `d6b89851a743d3526026fc3151df4501abeb022fd9dec5b3f2483e3cf891fcc7`, CRC32 `2D97804E`. Verified on hardware and by patching fresh copies of the clean dumps.

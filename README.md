@@ -9,16 +9,23 @@ In my opinion, using AI to help translate a game is far harder than I thought. W
 After playing through it a bit and fixing all the bugs I could spot, I feel like this is good enough for a public release and something I'm proud of putting out into the world. Please do let me know if you find any bugs or issues while playing the game. I would be happy to fix them.
 
 ## What's new in v1.1
-The biggest change: we found a way to fit more text on each line, in both story scenes and battle quotes. That extra room let us rework the script so it reads much more naturally.
+The big one this time is space. We got a narrower font working in story scenes and battle quotes, so each line holds a lot more text than before. That let us go back through the script and fix the lines we'd had to cut down to make them fit.
 
-- **More text per line.** A new narrower font and engine changes let story and battle text use the full width of the text box, so each line holds noticeably more text than before. Far fewer lines are trimmed or split awkwardly, and lines that had been shortened to fit the old width are back to their full wording.
-- **Flow pass, made possible by the extra room.** About 2,600 story and battle lines were reviewed against the Japanese and reworked where the English read stiffly or had to drop meaning to fit. Forms of address are more consistent, and leftover "-san" honorifics in battle are gone.
-- **Battle quote fixes.** Battle quotes that showed the wrong line, lost part of their meaning or broke in odd places have been corrected, including Saruwatari's taunt and the "War of the Giants" line.
-- **Name pass.** Did another name pass, so character and speaker names match the Japanese more closely.
-- **New HTML patcher.** Patch the game right in your browser with `SRWL_English_v1.1.html`: no separate patching program needed. It works offline, uploads nothing, checks your ROM and the result, and handles both supported Japanese dumps.
-- **Restored ellipses.** Pauses (…) that were dropped from the Japanese have been put back in about 800 lines.
-- **More English graphics.** Fifteen more pop-ups are now in English: Iczer Robo Combine/Split, Mazin Power, Steel Power, Zero System, Link/Unlink (EVA umbilical cable) and Ammo Refill.
-- **Pilot Stats page.** The CQB, RNG and SKL column headers now line up with their numbers, the "Q" in CQB is clearer, and the Intuition and Resupply Spirits no longer show as blank slots.
+- More text fits on each line in story scenes and battle quotes, so far fewer lines get cut short or split in odd places.
+- With the extra room we went back over about 2,600 story and battle lines and checked them against the Japanese. Lines that had lost meaning to fit are back to their full wording, and stiff ones read more naturally. Characters also address each other more consistently, and the leftover "-san" in battle quotes is gone.
+- Put back the "..." pauses from the Japanese in about 800 lines.
+- Fixed battle quotes that showed the wrong line or broke in a weird place, including Kenji's Mach Drill call, Saruwatari's taunt and the "War of the Giants" line.
+- Did another name pass, so character and speaker names match the Japanese more closely.
+- Intuition and Resupply no longer show up as blank slots on the Pilot Stats page.
+- New browser patcher, `SRWL_English_v1.1.html`. It works offline and nothing gets uploaded, so you don't need a separate patching program.
+
+### Before and after
+v1.0.1 on the left, v1.1 on the right. Same scene, same save.
+
+![Ichitaka's line has room for "Kujo" again](screenshots/compare-story-1.png)
+![Risako's pauses are back](screenshots/compare-story-2.png)
+![Kenji's Mach Drill call shows the right line](screenshots/compare-battle-1.png)
+![Rosa's cut-in shows her full line](screenshots/compare-battle-2.png)
 
 ### Included from v1.0.1
 - **Combination attacks show the right pilots again.** Some battles showed the wrong speaker with an untranslated line, for example Heero during Steel Jeeg's Mach Drill, and left out the yellow Combo label. A long English weapon or unit name could run past a hidden battle slot and change how the game picked the quote. Mach Drill now shows Kenji and Tsubaki with the Combo label, and other battles that picked the wrong quote the same way are fixed too.
@@ -73,7 +80,7 @@ Grab `SRWL_English_v1.1.html` (easiest), or `SRWL_English_v1.1.bps` if you prefe
 No pre-patched ROMs, please don't ask.
 
 ## Screenshots
-Captured in DeSmuME, showing both Nintendo DS screens at their original resolution.
+Captured in DeSmuME, showing both Nintendo DS screens at their original resolution. The story and battle shots are from v1.1.
 
 | Title screen | Opening narration |
 | --- | --- |
@@ -81,15 +88,15 @@ Captured in DeSmuME, showing both Nintendo DS screens at their original resoluti
 
 | Scenario title | Story dialogue |
 | --- | --- |
-| ![English Scenario 3 title card](screenshots/scenario-title.png) | ![English story dialogue between Cobalt and Sepia](screenshots/story-dialogue.png) |
+| ![English Scenario 3 title card](screenshots/scenario-title.png) | ![English story dialogue between Miu and Ichitaka](screenshots/story-dialogue.png) |
 
 | Weapon selection | Attack dialogue |
 | --- | --- |
-| ![English weapon selection and Dancouga Nova stats](screenshots/weapon-selection.png) | ![Johnny calling Dancou Cannon during an attack](screenshots/attack-dialogue.png) |
+| ![English weapon selection and Dancouga Nova stats](screenshots/weapon-selection.png) | ![Kenji calling Mach Drill during a combination attack](screenshots/attack-dialogue.png) |
 
 | Pilot cut-in | Battle animation |
 | --- | --- |
-| ![Goh's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Alto's battle animation and English dialogue](screenshots/battle-animation.png) |
+| ![Rosa's pilot cut-in with English battle dialogue](screenshots/pilot-cut-in.png) | ![Daiya's Giga Puncher battle animation and English dialogue](screenshots/battle-animation.png) |
 
 ## What you need
 A clean Japanese ROM of the game (BRWJ, revision 0, 134,217,728 bytes). Two dumps are known. The HTML patcher accepts both; the .bps applies to the canonical dump:
@@ -121,6 +128,7 @@ The ROM displays the English ROM-list title. Refresh cached ROM lists after repl
 - The game hasn't been played start to finish on every route yet, so some late-game lines, rare menus or long names may still overflow.
 - **Weapon Type line comma (cosmetic):** combination attacks and some other weapon types show a trailing comma, e.g. `CQB, Combo,`. The shared translated type fragment ends with an ASCII comma and the game's list builder does not strip it. Tracked for the next text/UI pass; it does not affect gameplay.
 - **Long battle names:** the battle name caches are deliberately bounded since v1.0. Very long weapon, unit and pilot names are truncated at a character boundary on those screens; the underlying name text is unchanged.
+- A few long battle lines can still run past the edge of the box. One we know about is Daiya's "Take a good look! We're giving it everything we've got!" in a Gaiking battle.
 - Old save states are incompatible with this update; cold boot and load a normal in-game save. In-game saves carry over.
 
 Found something? See [PLAYTESTING.md](release_docs/PLAYTESTING.md), and please attach a save. Changes are in the [changelog](release_docs/CHANGELOG.md).

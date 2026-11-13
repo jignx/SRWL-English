@@ -13,6 +13,13 @@ the box.
   next row, like Daiya's "We're giving it everything we've got!" in a Gaiking battle. About 170
   pages were re-broken to fit.
 
+### Screenshots
+
+![Sayaka asks Kouji about Captain Yagyu](https://raw.githubusercontent.com/jignx/SRWL-English/main/screenshots/v111-story-build-base.png)
+![Himika and Mimashi in the Jamatai Kingdom](https://raw.githubusercontent.com/jignx/SRWL-English/main/screenshots/v111-story-jamatai.png)
+![Daiya's Gaiking line now fits the box](https://raw.githubusercontent.com/jignx/SRWL-English/main/screenshots/v111-battle-quote.png)
+![Rosa's cut-in](https://raw.githubusercontent.com/jignx/SRWL-English/main/screenshots/v111-pilot-cut-in.png)
+
 ### How to patch
 
 Same as v1.1: open `SRWL_English_v1.1.1.html` in your browser and pick your Japanese ROM, or

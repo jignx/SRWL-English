@@ -14,6 +14,14 @@ A small follow-up to v1.1. Some of you said the narrow font looked rough, especi
 - Cleaner letters in story scenes and battle quotes. W, M, Y and T are redrawn, capitals and numbers are a pixel shorter so they sit better next to lowercase, and g, a, s, j, K, N, S, X and 0 are tidied up. Every letter keeps its old width, so no line moved.
 - Fixed battle quotes that ran past the right edge of the box and left a stray letter on the next row, like Daiya's "We're giving it everything we've got!" in a Gaiking battle. About 170 pages were re-broken to fit.
 
+
+#### v1.1.1 screenshots
+
+![Sayaka asks Kouji about Captain Yagyu](screenshots/v111-story-build-base.png)
+![Himika and Mimashi in the Jamatai Kingdom](screenshots/v111-story-jamatai.png)
+![Daiya's Gaiking line now fits the box](screenshots/v111-battle-quote.png)
+![Rosa's cut-in](screenshots/v111-pilot-cut-in.png)
+
 ### Included from v1.1
 The big one this time is space. We got a narrower font working in story scenes and battle quotes, so each line holds a lot more text than before. That let us go back through the script and fix the lines we'd had to cut down to make them fit.
 

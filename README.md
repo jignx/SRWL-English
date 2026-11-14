@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v1.1.1
+# Super Robot Taisen L -- English v1.1.2
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. Only patches are distributed; you supply your own clean Japanese ROM.
 
@@ -25,16 +25,16 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 | ![Himika and Mimashi in the Jamatai Kingdom](screenshots/v111-story-jamatai.png) | ![Daiya's Gaiking battle quote](screenshots/v111-battle-quote.png) |
 | ![Weapon selection for Dancouga Nova](screenshots/weapon-selection.png) | ![Rosa's pilot cut-in](screenshots/v111-pilot-cut-in.png) |
 
-## What's new in v1.1.1
-Cleaner letters in the story and battle font (W, M, Y, T and others redrawn), and about 170 battle quotes that ran past the edge of the box now fit. Older changes are in the [changelog](release_docs/CHANGELOG.md).
+## What's new in v1.1.2
+A hotfix: the game no longer stays on a white screen on a DSi with a DSpico. The ROM header now carries its own version number, so Pico Loader skips the anti-piracy patch it applies to the Japanese game (ours already switches anti-piracy off). Nothing else changed from v1.1.1, which brought cleaner letters in the story and battle font and about 170 battle quotes that now fit their box. Older changes are in the [changelog](release_docs/CHANGELOG.md).
 
 ## How to patch
 You need a clean Japanese ROM of the game (BRWJ, revision 0).
 
-1. Download `SRWL_English_v1.1.1.html` from the [v1.1.1 release](https://github.com/jignx/SRWL-English/releases/tag/v1.1.1).
-2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.1.1.nds`.
+1. Download `SRWL_English_v1.1.2.html` from the [v1.1.2 release](https://github.com/jignx/SRWL-English/releases/tag/v1.1.2).
+2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.1.2.nds`.
 
-Prefer your own patcher? Apply `SRWL_English_v1.1.1.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
+Prefer your own patcher? Apply `SRWL_English_v1.1.2.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 

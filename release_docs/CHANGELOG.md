@@ -4,6 +4,11 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.1.2 - 2026-11-14
+
+- **DSpico white screen fixed.** The ROM header's version byte is now 1 instead of the Japanese game's 0. Pico Loader (DSpico) looks up its anti-piracy patches by game code and version and patched SRW L's anti-piracy code on top of ours, which left the game on a white screen. With version 1 it skips that patch. The game code stays BRWJ, so save-type detection is unchanged. No text or graphics changed.
+- **Patches:** `SRWL_English_v1.1.2.html`, 40,941,901 bytes, SHA-256 `0c864bb0df5ea27e3b632a6f811d0742558f8c54c10e6adb38de5b55a591f938`; `SRWL_English_v1.1.2.bps`, 30,697,247 bytes, SHA-256 `cb86e11a3e72cdb9f5662ab8d838126a4334970e04ce119d91eda9d33f5b7e46`. Patched ROM: 128,452,668 bytes, SHA-256 `b7d13764e408ddd2048f4aa87ad8ccf0c68f733413d59a5010f8b74c80da3fac`, CRC32 `BE95E7D7`.
+
 ## v1.1.1 - 2026-11-13
 
 - **Font polish.** Redrew W, M, Y and T in the narrow story/battle font, made capitals, digits and tall lowercase letters one pixel shorter, and tidied g, a, s, j, K, N, S, X and 0. Every letter keeps its width, so no line breaks changed.

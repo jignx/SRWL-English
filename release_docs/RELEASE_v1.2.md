@@ -8,7 +8,13 @@ A big text update. We went back over the whole script for meaning and character 
 - **Consistent names and terms** across story, menus and battles.
 - **Battle quotes.** More than 200 lines fixed, and lines that ran past the box now fit.
 - **Mission Objective hints.** New cyan hints for secret conditions and route splits.
-- **Fixes.** Nagisa no longer drops out of Iczer-1's crew on a stage restart, map place names show in full, and forecast pilot names are in mixed case.
+- **Fixes.** Map place names show in full, and forecast pilot names are in mixed case.
+
+### Bugs from the original game we fixed
+
+Some problems come from the Japanese game itself, not from the translation. We fix those too when we find them.
+
+- **New in v1.2:** Restarting a stage while Iczer-1 was not combined could drop Nagisa from Iczer-1's crew. The game only saved some of the crew seats in its stage-start snapshot, and now it saves all of them.
 
 ### Screenshots
 

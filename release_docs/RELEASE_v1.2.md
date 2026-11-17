@@ -14,7 +14,7 @@ A big text update. We went back over the whole script for meaning and character 
 
 Some problems come from the Japanese game itself, not from the translation. We fix those too when we find them.
 
-- **New in v1.2:** Restarting a stage while Iczer-1 was not combined could drop Nagisa from Iczer-1's crew. The game only saved some of the crew seats in its stage-start snapshot, and now it saves all of them.
+- **New in v1.2: Nagisa disappears.** In the Japanese game, if Iczer Robo was on the field when you got a GAME OVER, continuing and retrying the stage could drop Nagisa from Iczer Robo's crew for good. The game's stage-start snapshot skipped some crew seats; it now saves all of them, so Nagisa stays.
 
 ### Screenshots
 
@@ -35,6 +35,7 @@ Back up your save and cold boot. Saves from v1.1 and later carry over.
 - On a few screens a small button badge touches the label next to it, like the X before Skill Parts and SEL before View. It's only cosmetic.
 - Very long weapon, unit and pilot names get cut short on battle screens on purpose.
 - Nobody has played every route start to finish yet, so some late-game lines, rare menus or long names may still overflow.
+- **From the original game, not fixed yet:** if Michel reaches 992 or more kills before stage 29-A, he will not survive that stage. Kill counts carry over between playthroughs, so this mostly affects later replays. We plan to fix it in a later version.
 
 ### Found a bug?
 

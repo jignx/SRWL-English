@@ -4,6 +4,21 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.2 - 2026-11-17
+
+- **Meaning fixes.** 143 lines that drifted from the Japanese corrected, plus 74 more found in a later cross-check.
+- **Voice pass.** About 2,200 story lines reworked so each character sounds like themselves; trailing-off lines restored where the Japanese trails off.
+- **Consistent names and terms.** Alliance, NUNS and S.M.S. standardised; names of characters, units and weapons made to match across story, menus and battles.
+- **Battle quotes.** More than 200 battle lines corrected for meaning or voice, hesitation pauses restored, and the remaining rows over the box edge re-broken to fit.
+- **Map labels.** About 40 location labels widened so place names show in full.
+- **Mission Objective hints.** Cyan hints for secret conditions and route splits.
+- **Battle forecast.** Pilot names in mixed case.
+- **BGM.** Titles updated; one title strip redrawn.
+- **Nagisa fix.** Restarting a stage no longer drops Nagisa from Iczer-1's crew.
+- **UI.** Spirit buttons and the Aid label centred.
+- Header version byte stays 1 (DSpico fix from v1.1.2); game code BRWJ.
+- **Patches:** `SRWL_English_v1.2.html`, 27,348,919 bytes, SHA-256 `be69b111989e7f67893c68b060e9ecf0f1e5fd807b92d53700a46b52cee48502`; `SRWL_English_v1.2.bps`, 20,502,515 bytes, SHA-256 `70a63f6cf2ec66f39e66964af3c9c4d33d23928e5b6bce16f737bed083c95715`. Patched ROM: 128,463,420 bytes, SHA-1 `201fab8613eb586e8a6192f047d34143b7eb4f8d`, SHA-256 `164570786f29e70785e23f0837437c966c90de068241bcae4e6c8f4936993f52`, CRC32 `C3C460E6`.
+
 ## v1.1.2 - 2026-11-14
 
 - **DSpico white screen fixed.** The ROM header's version byte is now 1 instead of the Japanese game's 0. Pico Loader (DSpico) looks up its anti-piracy patches by game code and version and patched SRW L's anti-piracy code on top of ours, which left the game on a white screen. With version 1 it skips that patch. The game code stays BRWJ, so save-type detection is unchanged. No text or graphics changed.

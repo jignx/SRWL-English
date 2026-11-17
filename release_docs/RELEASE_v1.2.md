@@ -14,7 +14,7 @@ A big text update. We went back over the whole script for meaning and character 
 
 Some problems come from the Japanese game itself, not from the translation. We fix those too when we find them.
 
-- **New in v1.2: Nagisa disappears.** In the Japanese game, if Iczer Robo was on the field when you got a GAME OVER, continuing and retrying the stage could drop Nagisa from Iczer Robo's crew for good. The game's stage-start snapshot skipped some crew seats; it now saves all of them, so Nagisa stays.
+- **New in v1.2: Nagisa disappears.** In the Japanese game, if Iczer Robo was on the field when you got a GAME OVER, continuing and retrying the stage could drop Nagisa from Iczer Robo's crew. The game's stage-start snapshot skipped some crew seats; it now saves all of them, so Nagisa stays.
 
 ### Screenshots
 

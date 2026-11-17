@@ -4,17 +4,11 @@ A big text update. We went back over the whole script for meaning and character 
 
 ### What changed
 
-- Better meaning. 143 lines that drifted from the Japanese were corrected, plus another 74 found in a later cross-check.
-- Character voice. Each speaker now sounds more like themselves: about 2,200 story lines got a voice pass, and lines that trailed off in the Japanese trail off again.
-- One spelling for everything. Terms like the Alliance, NUNS and S.M.S. now read the same everywhere, and a sweep made character, unit and weapon names match across story, menus and battles.
-- Battle quotes. More than 200 battle lines were corrected for meaning or voice, short pauses were restored where the speaker hesitates, and the last few rows that ran past the edge of the box now fit.
-- Map location labels have more room, so about 40 place names now show in full.
-- The Mission Objective screen now shows cyan hints for secret conditions, and at the route splits it hints which choice leads where.
-- Pilot names on the battle forecast are in normal mixed case instead of all capitals.
-- BGM titles updated, and one BGM title strip redrawn.
-- Fixed Nagisa dropping out of Iczer-1's crew when you restart a stage.
-- Spirit buttons and the Aid label are centred properly.
-- The ROM header still carries version 1 from v1.1.2, so the DSpico fix stays in.
+- Better meaning and voice: lines that drifted from the Japanese were fixed, and about 2,200 story lines got a voice pass so each character sounds like themselves.
+- Names and terms (Alliance, NUNS, S.M.S., characters, units, weapons) now read the same everywhere.
+- More than 200 battle quotes fixed, and the last ones running off the box now fit.
+- The Mission Objective screen now hints at secret conditions and route splits.
+- Smaller fixes: full place names on the map, the Nagisa sub-pilot bug, BGM titles and UI labels. The DSpico fix from v1.1.2 stays in.
 
 ### Screenshots
 

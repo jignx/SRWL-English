@@ -4,11 +4,11 @@ A big text update. We went back over the whole script for meaning and character 
 
 ### What changed
 
-- Better meaning and voice: lines that drifted from the Japanese were fixed, and about 2,200 story lines got a voice pass so each character sounds like themselves.
-- Names and terms (Alliance, NUNS, S.M.S., characters, units, weapons) now read the same everywhere.
-- More than 200 battle quotes fixed, and the last ones running off the box now fit.
-- The Mission Objective screen now hints at secret conditions and route splits.
-- Smaller fixes: full place names on the map, the Nagisa sub-pilot bug, BGM titles and UI labels. The DSpico fix from v1.1.2 stays in.
+- **Meaning and voice.** 217 lines that drifted from the Japanese were corrected, and about 2,200 story lines were reworked so each character sounds like themselves.
+- **Consistent names and terms** across story, menus and battles.
+- **Battle quotes.** More than 200 lines fixed, and lines that ran past the box now fit.
+- **Mission Objective hints.** New cyan hints for secret conditions and route splits.
+- **Fixes.** Nagisa no longer drops out of Iczer-1's crew on a stage restart, map place names show in full, and forecast pilot names are in mixed case.
 
 ### Screenshots
 

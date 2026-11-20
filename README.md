@@ -38,6 +38,8 @@ Prefer your own patcher? Apply `SRWL_English_v1.3.bps` with Flips and check the 
 
 Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.3_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.3_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.3.nds`. Flips works too. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
 
+Mirror downloads for the BGM add-ons: [Gofile](https://gofile.io/d/ZFqUQLUS) · [1fichier](https://1fichier.com/?dr7bkbhgn2e4mplokv48) · [MEGA](https://mega.nz/file/iDg2yDrL#8hXJHM_HrCJRhk7IXASOVYhu0SVbWb0RWgQbSJf18lA)
+
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 
 No pre-patched ROMs, please don't ask.

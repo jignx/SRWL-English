@@ -15,6 +15,8 @@ Open `SRWL_English_v1.3.html` in your browser and pick your Japanese ROM, or app
 
 **BGM add-on:** in the HTML patcher, also pick `SRWL_English_v1.3_StereoBGM_addon.bps` (or `..._MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched v1.3 ROM. Flips or ROM Patcher JS work too. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
 
+Mirror downloads for the BGM add-ons: [Gofile](https://gofile.io/d/ZFqUQLUS) · [1fichier](https://1fichier.com/?dr7bkbhgn2e4mplokv48) · [MEGA](https://mega.nz/file/iDg2yDrL#8hXJHM_HrCJRhk7IXASOVYhu0SVbWb0RWgQbSJf18lA)
+
 ### Found a bug?
 
 Please [open an issue](https://github.com/jignx/SRWL-English/issues) with the version, your emulator or hardware, where it happened, and a screenshot of both screens. A save near the problem helps. Please don't upload ROMs.

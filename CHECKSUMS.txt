@@ -1,14 +1,17 @@
-Super Robot Wars L English v1.3
+Super Robot Wars L English v1.3.1
+
+v1.3.1 fixes a freeze on the Saving screen with the vocal BGM add-ons. The main patch and the
+patched ROM are the same as v1.3; only the two BGM add-ons changed.
 
 Two patches give the same patched ROM:
-- SRWL_English_v1.3.html: offline browser patcher, accepts both clean dumps below.
-- SRWL_English_v1.3.bps: standard BPS patch for the canonical-header dump.
+- SRWL_English_v1.3.1.html: offline browser patcher, accepts both clean dumps below.
+- SRWL_English_v1.3.1.bps: standard BPS patch for the canonical-header dump (same bytes as SRWL_English_v1.3.bps).
 Both verified by patching fresh copies of the clean dumps; identical output hash below.
 
-Optional vocal BGM add-ons apply to the patched SRWL_English_v1.3.nds (use one). The HTML patcher
-can apply one too, from the Japanese ROM or from SRWL_English_v1.3.nds:
-- SRWL_English_v1.3_StereoBGM_addon.bps: stereo vocal BGM.
-- SRWL_English_v1.3_MonoBGM_addon.bps: smaller mono fallback.
+Optional vocal BGM add-ons apply to the patched ROM (use one). The HTML patcher
+can apply one too, from the Japanese ROM or from an already-patched v1.3 / v1.3.1 ROM:
+- SRWL_English_v1.3.1_StereoBGM_addon.bps: stereo vocal BGM.
+- SRWL_English_v1.3.1_MonoBGM_addon.bps: smaller mono fallback.
 
 Clean Japanese ROM (canonical header, not distributed): clean.nds
 Size: 134217728 bytes
@@ -20,40 +23,40 @@ Size: 134217728 bytes
 SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
-HTML patcher: SRWL_English_v1.3.html
-Size: 41280351 bytes
-SHA-256: 96645ee1b7cba94ba45cd029255448c11f4570353ebd01a65aff763f14db7c79
-CRC32: 568E62C4
+HTML patcher: SRWL_English_v1.3.1.html
+Size: 41280379 bytes
+SHA-256: 3b4d9e0fe7ab5a688366d65eb27f1ab716501b9e3c489d652f54609f12b3c27a
+CRC32: 8F0B5275
 
-BPS patch: SRWL_English_v1.3.bps
+BPS patch: SRWL_English_v1.3.1.bps
 Size: 30946868 bytes
 SHA-256: 39215bf4fb8dbccfc8cbcadb1dac07b882482566a2f879112e6a7f6b1a487203
 CRC32: 2144DF1C
 
-Stereo BGM add-on: SRWL_English_v1.3_StereoBGM_addon.bps
-Size: 163746566 bytes
-SHA-256: 92b291c221abc1f08d3aa4cc81954cdd4fc16c5571de1d46937dcac230e90363
+Stereo BGM add-on: SRWL_English_v1.3.1_StereoBGM_addon.bps
+Size: 163746602 bytes
+SHA-256: ed743e5bbc2ae711b10905584e6d6d50e4875a6fe0b6d78e38a8d8e1e2a9fd7e
 CRC32: 2144DF1C
 
-Mono BGM add-on: SRWL_English_v1.3_MonoBGM_addon.bps
-Size: 93738600 bytes
-SHA-256: 809744b6594be041c230a2961272ec82230883e39feb63837c99923c72389c92
+Mono BGM add-on: SRWL_English_v1.3.1_MonoBGM_addon.bps
+Size: 93738845 bytes
+SHA-256: 3f999118f065ef5c63a7049026c4fc6756a8848be013dff88c675c5df20ed4e6
 CRC32: 2144DF1C
 
-Patched ROM (not distributed): SRWL_English_v1.3.nds
+Patched ROM (not distributed, unchanged from v1.3): SRWL_English_v1.3.1.nds
 Size: 128465468 bytes
 SHA-1: 07a1f95e7ad4d897c489c18a524f75cea43e06c4
 SHA-256: 6ca621dd431f71a26ef8870161262e0c656c09b26729af0d9ab1f4b21607cdc0
 CRC32: 40E00BDD
 
-Patched ROM with stereo BGM add-on (not distributed): SRWL_English_v1.3_StereoBGM.nds
+Patched ROM with stereo BGM add-on (not distributed): SRWL_English_v1.3.1_StereoBGM.nds
 Size: 265797184 bytes
-SHA-1: 0fb0982847b790a4ae5eeffc8527367e2666c539
-SHA-256: 85ca36eff5216dc68a4fc3f43ae908e7c067ef828dcf5d0b4dacb0a0388685a1
-CRC32: 5B8A0794
+SHA-1: 2293d1976909b9f001f4eba3299182c45ea30e94
+SHA-256: ba5bf54d28052d637efed1905dab1129a1bc8da2521c989a56bf9d696742b54f
+CRC32: C91856CC
 
-Patched ROM with mono BGM add-on (not distributed): SRWL_English_v1.3_MonoBGM.nds
+Patched ROM with mono BGM add-on (not distributed): SRWL_English_v1.3.1_MonoBGM.nds
 Size: 197138496 bytes
-SHA-1: 98b3ce952916b6f0610d550d36724f349d195e7e
-SHA-256: 8bf651bf69d4bf491a935a248d896b93eaecffecf027892cf6ecf4844ca94d8f
-CRC32: E7EE8EC1
+SHA-1: 878c157f7150ad7f16c2e70618e863ff1c55d1cd
+SHA-256: 9f62a7fa39ede82c5e69c451eb8af7c8cc2255676a56c511e45ad2e9b262c465
+CRC32: A035C28C

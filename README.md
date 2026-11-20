@@ -39,7 +39,7 @@ You need a clean Japanese ROM of the game (BRWJ, revision 0).
 
 Prefer your own patcher? Apply `SRWL_English_v1.3.1.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
 
-Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.3.1_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.3.1_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.3.nds` or `SRWL_English_v1.3.1.nds`. Flips works too. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
+Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.3.1_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.3.1_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.3.nds` or `SRWL_English_v1.3.1.nds`. Flips works too. The add-on files are downloaded separately from the GitHub release; download links will be added here shortly. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 

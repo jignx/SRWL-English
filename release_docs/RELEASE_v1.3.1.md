@@ -13,7 +13,7 @@ With a v1.3 BGM add-on, saving on a map could leave the game stuck on "Saving...
 
 Open `SRWL_English_v1.3.1.html` in your browser and pick your Japanese ROM, or apply `SRWL_English_v1.3.1.bps` to the clean dump. No earlier version needed. Back up your save and cold boot; saves from v1.1 and later carry over.
 
-**BGM add-on:** in the HTML patcher, also pick `SRWL_English_v1.3.1_StereoBGM_addon.bps` (or `..._MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched v1.3 or v1.3.1 ROM. Flips or ROM Patcher JS work too. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
+**BGM add-on:** in the HTML patcher, also pick `SRWL_English_v1.3.1_StereoBGM_addon.bps` (or `..._MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched v1.3 or v1.3.1 ROM. The add-on files are downloaded separately from the GitHub release; download links will be added to these notes shortly. Flips or ROM Patcher JS work too. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
 
 ### Found a bug?
 

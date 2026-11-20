@@ -18,7 +18,7 @@ were handed out; the other builds were private test builds.
 - **Vocal BGM add-on (optional).** Stereo (tested on 3DS) with a mono fallback. The HTML patcher can build the BGM ROM in one go from the Japanese ROM or the patched v1.3 ROM; Flips works too.
 - **Patches:** `SRWL_English_v1.3.html`, 41,280,351 bytes, SHA-256 `96645ee1b7cba94ba45cd029255448c11f4570353ebd01a65aff763f14db7c79`; `SRWL_English_v1.3.bps`, 30,946,868 bytes, SHA-256 `39215bf4fb8dbccfc8cbcadb1dac07b882482566a2f879112e6a7f6b1a487203`. Patched ROM: 128,465,468 bytes, SHA-1 `07a1f95e7ad4d897c489c18a524f75cea43e06c4`, SHA-256 `6ca621dd431f71a26ef8870161262e0c656c09b26729af0d9ab1f4b21607cdc0`, CRC32 `40E00BDD`.
 - **BGM add-ons:** `SRWL_English_v1.3_StereoBGM_addon.bps`, 163,746,566 bytes, SHA-256 `92b291c221abc1f08d3aa4cc81954cdd4fc16c5571de1d46937dcac230e90363` (result 265,797,184 bytes, SHA-256 `85ca36eff5216dc68a4fc3f43ae908e7c067ef828dcf5d0b4dacb0a0388685a1`); `SRWL_English_v1.3_MonoBGM_addon.bps`, 93,738,600 bytes, SHA-256 `809744b6594be041c230a2961272ec82230883e39feb63837c99923c72389c92` (result 197,138,496 bytes, SHA-256 `8bf651bf69d4bf491a935a248d896b93eaecffecf027892cf6ecf4844ca94d8f`).
-- **BGM mirrors:** [Gofile](https://gofile.io/d/ZFqUQLUS) · [1fichier](https://1fichier.com/?dr7bkbhgn2e4mplokv48) · [MEGA](https://mega.nz/file/iDg2yDrL#8hXJHM_HrCJRhk7IXASOVYhu0SVbWb0RWgQbSJf18lA)
+- **BGM add-ons withdrawn:** they could freeze on the Saving screen; replaced by v1.3.1.
 
 ## v1.2 - 2026-11-17
 

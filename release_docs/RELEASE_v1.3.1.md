@@ -23,9 +23,9 @@ Please [open an issue](https://github.com/jignx/SRWL-English/issues) with the ve
 
 - Japanese source ROM: `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`
 - `SRWL_English_v1.3.1.bps` (same as v1.3): `39215bf4fb8dbccfc8cbcadb1dac07b882482566a2f879112e6a7f6b1a487203`
-- `SRWL_English_v1.3.1.html`: `3b4d9e0fe7ab5a688366d65eb27f1ab716501b9e3c489d652f54609f12b3c27a`
-- `SRWL_English_v1.3.1_StereoBGM_addon.bps`: `ed743e5bbc2ae711b10905584e6d6d50e4875a6fe0b6d78e38a8d8e1e2a9fd7e`
-- `SRWL_English_v1.3.1_MonoBGM_addon.bps`: `3f999118f065ef5c63a7049026c4fc6756a8848be013dff88c675c5df20ed4e6`
+- `SRWL_English_v1.3.1.html`: `48452d46a15962f1a98b1d27a5136d38f9b01a9ec424147951c41d02be68327e`
+- `SRWL_English_v1.3.1_StereoBGM_addon.bps`: `c1885c46950f52038be6d3bba6c19c324b7e2e9fca953061d8bf1c12b70a269d`
+- `SRWL_English_v1.3.1_MonoBGM_addon.bps`: `9be2a8204c9ab1dd8efc358250f3cbd97ad9f379a0df3b0b17bfa17f31e12a05`
 - Patched ROM (same as v1.3): `6ca621dd431f71a26ef8870161262e0c656c09b26729af0d9ab1f4b21607cdc0`
-- With stereo add-on: `ba5bf54d28052d637efed1905dab1129a1bc8da2521c989a56bf9d696742b54f`
-- With mono add-on: `9f62a7fa39ede82c5e69c451eb8af7c8cc2255676a56c511e45ad2e9b262c465`
+- With stereo add-on: `00cde860141abbe08bac6b4f844afe3583134b44fb2ed46b63633c3495b981d3`
+- With mono add-on: `f1345a89129d59a302ad7354534833a0227473afb1f3868cbb31a47fe7680c85`

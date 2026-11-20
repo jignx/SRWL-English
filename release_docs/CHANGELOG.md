@@ -7,8 +7,8 @@ were handed out; the other builds were private test builds.
 ## v1.3.1 - 2026-11-20
 
 - **BGM add-on save fix.** With the Stereo or Mono BGM add-on, saving on a map could freeze on "Saving... Do not power off." (the save itself was written). The music player now waits while the game writes the save. Main patch and patched ROM unchanged from v1.3.
-- **Patches:** `SRWL_English_v1.3.1.html`, 41,280,379 bytes, SHA-256 `3b4d9e0fe7ab5a688366d65eb27f1ab716501b9e3c489d652f54609f12b3c27a`; `SRWL_English_v1.3.1.bps` (same bytes as v1.3), 30,946,868 bytes, SHA-256 `39215bf4fb8dbccfc8cbcadb1dac07b882482566a2f879112e6a7f6b1a487203`. Patched ROM unchanged: SHA-256 `6ca621dd431f71a26ef8870161262e0c656c09b26729af0d9ab1f4b21607cdc0`.
-- **BGM add-ons:** `SRWL_English_v1.3.1_StereoBGM_addon.bps`, 163,746,602 bytes, SHA-256 `ed743e5bbc2ae711b10905584e6d6d50e4875a6fe0b6d78e38a8d8e1e2a9fd7e` (result 265,797,184 bytes, SHA-256 `ba5bf54d28052d637efed1905dab1129a1bc8da2521c989a56bf9d696742b54f`); `SRWL_English_v1.3.1_MonoBGM_addon.bps`, 93,738,845 bytes, SHA-256 `3f999118f065ef5c63a7049026c4fc6756a8848be013dff88c675c5df20ed4e6` (result 197,138,496 bytes, SHA-256 `9f62a7fa39ede82c5e69c451eb8af7c8cc2255676a56c511e45ad2e9b262c465`).
+- **Patches:** `SRWL_English_v1.3.1.html`, 41,280,379 bytes, SHA-256 `48452d46a15962f1a98b1d27a5136d38f9b01a9ec424147951c41d02be68327e`; `SRWL_English_v1.3.1.bps` (same bytes as v1.3), 30,946,868 bytes, SHA-256 `39215bf4fb8dbccfc8cbcadb1dac07b882482566a2f879112e6a7f6b1a487203`. Patched ROM unchanged: SHA-256 `6ca621dd431f71a26ef8870161262e0c656c09b26729af0d9ab1f4b21607cdc0`.
+- **BGM add-ons:** `SRWL_English_v1.3.1_StereoBGM_addon.bps`, 163,746,754 bytes, SHA-256 `c1885c46950f52038be6d3bba6c19c324b7e2e9fca953061d8bf1c12b70a269d` (result 265,797,184 bytes, SHA-256 `00cde860141abbe08bac6b4f844afe3583134b44fb2ed46b63633c3495b981d3`); `SRWL_English_v1.3.1_MonoBGM_addon.bps`, 93,739,020 bytes, SHA-256 `9be2a8204c9ab1dd8efc358250f3cbd97ad9f379a0df3b0b17bfa17f31e12a05` (result 197,139,008 bytes, SHA-256 `f1345a89129d59a302ad7354534833a0227473afb1f3868cbb31a47fe7680c85`).
 
 ## v1.3 - 2026-11-20
 

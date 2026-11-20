@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v1.2
+# Super Robot Taisen L -- English v1.3
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. Only patches are distributed; you supply your own clean Japanese ROM.
 
@@ -25,27 +25,25 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 | ![Meyrin on the Minerva bridge](screenshots/v12-story-minerva.png) | ![Canaria's battle cry](screenshots/v12-battle-quote.png) |
 | ![Weapon selection for Dancouga Nova](screenshots/weapon-selection.png) | ![Quatre's support attack](screenshots/v12-support-attack.png) |
 
-## What's new in v1.2
-A big text pass. Lines that drifted from the Japanese were corrected, every character got a voice pass, and names and terms now read the same everywhere. More battle quotes were fixed and now fit their box. Place names on the map show in full, and the Mission Objective screen hints at secrets and route splits. Nagisa no longer drops out of Iczer-1's crew when you restart a stage. The DSpico fix from v1.1.2 is still in. Older changes are in the [changelog](release_docs/CHANGELOG.md).
+## What's new in v1.3
+A dialogue and presentation pass: about 185 lines corrected for meaning and 380 polished for flow, full names on maps and area titles, and Mission Objectives that name the pilot they need. New: an optional vocal BGM add-on (stereo, with a mono fallback). Older changes are in the [changelog](release_docs/CHANGELOG.md).
 
 ## How to patch
 You need a clean Japanese ROM of the game (BRWJ, revision 0).
 
-1. Download `SRWL_English_v1.2.html` from the [v1.2 release](https://github.com/jignx/SRWL-English/releases/tag/v1.2).
-2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.2.nds`.
+1. Download `SRWL_English_v1.3.html` from the [v1.3 release](https://github.com/jignx/SRWL-English/releases/tag/v1.3).
+2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.3.nds`.
 
-Prefer your own patcher? Apply `SRWL_English_v1.2.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
+Prefer your own patcher? Apply `SRWL_English_v1.3.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
+
+Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.3_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.3_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.3.nds`. Flips works too. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 
 No pre-patched ROMs, please don't ask.
 
 ## Compatibility
-Tested on New 3DS and Ace3DS+ Wood, plus DeSmuME and melonDS.
-
-## Known issues
-- Not every route has been played start to finish yet, so some late-game lines or rare menus may still overflow.
-- Some weapon types show a trailing comma, e.g. `CQB, Combo,` (cosmetic).
+Tested on New 3DS, Ace3DS+ Wood, SuperCard and DSpico, plus DeSmuME and melonDS. The stereo BGM add-on was tested on 3DS.
 
 ## Report a bug
 Open an issue with the version, emulator or hardware, what happened and how to repeat it, and a screenshot if you can. A save near the problem helps a lot. See [PLAYTESTING.md](release_docs/PLAYTESTING.md). Please don't upload ROMs.

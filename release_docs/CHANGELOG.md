@@ -4,6 +4,12 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.3.2 - 2026-11-21
+
+- **Crash fix.** Stage 12 could crash or freeze when the info screen of the ARMA enemy unit was opened. Its pilot's shortened name label was written to the wrong place in the text buffer, so the text renderer ran past its memory. Text and graphics otherwise unchanged from v1.3.1.
+- **Patches:** `SRWL_English_v1.3.2.html`, 41,280,379 bytes, SHA-256 `31cf1f3bbf9c155a965c47699c08a1e24f63b2923c03accb2921263e7cee853f`; `SRWL_English_v1.3.2.bps`, 30,946,868 bytes, SHA-256 `eed96d08e6474fb1ebcc33d90e970ee18e8c0ea868f3917239468725af9b4f77`. Patched ROM: 128,465,468 bytes, SHA-1 `4b39867136cec8bf37fe594bdd01f9b2cd66e901`, SHA-256 `d727da13ebe78a9da22ff3e4f8584565f406218e5eac579675032e60cea09797`, CRC32 `53E9E761`.
+- **BGM add-ons (downloaded separately):** `SRWL_English_v1.3.2_StereoBGM_addon.bps`, 163,746,754 bytes, SHA-256 `394eaa0bbefd99c0ec91483859c548ea705d5a30fbd26e6164a046bfce5ddd27` (result 265,797,184 bytes, SHA-256 `4c1bdcf5cd12fc1695b38ba0a5da47c6c7c173f8027cb78e57610687777569b3`); `SRWL_English_v1.3.2_MonoBGM_addon.bps`, 93,739,020 bytes, SHA-256 `6bf61b94506b2895dcb75b2f0b65bfda9d5d424346df03a16c7c0b80c1f2ddf2` (result 197,139,008 bytes, SHA-256 `9f7646da0e9bbb83836bb398c246f5ccec7156c4b27fe5dfc85e255634963858`). Same music and player as v1.3.1; the v1.3.1 add-ons don't fit v1.3.2.
+
 ## v1.3.1 - 2026-11-20
 
 - **BGM add-on save fix.** With the Stereo or Mono BGM add-on, saving on a map could freeze on "Saving... Do not power off." (the save itself was written). The music player now waits while the game writes the save. Main patch and patched ROM unchanged from v1.3.

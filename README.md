@@ -45,7 +45,12 @@ You need a clean Japanese ROM of the game (BRWJ, revision 0).
 
 Prefer your own patcher? Apply `SRWL_English_v1.4.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
 
-Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.4_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.4_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.4.nds`. Flips works too. The add-on files are downloaded separately from the GitHub release; download links will be added here shortly. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
+Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.4_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.4_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.4.nds`. Flips works too. The add-on files are downloaded separately from the GitHub release (links below). The ROM grows to about 266 MB (stereo) or 197 MB (mono).
+
+Mirror downloads for the v1.4 BGM add-ons:
+
+- Stereo: [Gofile](https://gofile.io/d/fdHC3rB8) · [1fichier](https://1fichier.com/?7dc46khps1cskb7unzoe) · [MEGA](https://mega.nz/file/DfphyLjS#5h93ZXpTBrfJTXP1d7G4oqPPgDFWRcCOsCw4EJxKOhk)
+- Mono: [Gofile](https://gofile.io/d/KuRgBefu) · [1fichier](https://1fichier.com/?6l4xw2s40hs1pe9ufoxn) · [MEGA](https://mega.nz/file/KOBEyazY#6Ckc5Xhla47knCPnzYqN7zj1XPxvIubOwl6Q3s7eCbQ)
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 

@@ -4,6 +4,13 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.4 - 2026-11-21
+
+- **Original-game bugs fixed.** Aoi Hidaka's A.Combo was one level low on maps (never reached level 3). The Great Booster showed 4/6 instead of 6/6 with B-Save on the Great Mazinger and lost shots. Soul, Hot Blood, Direct Hit, Mercy, Luck and Effort stayed active after boosting a support attack. Pressing X on a Combo weapon's target list could start a battle that hit nothing or froze. The Dannar Combination cut-in showed Goh instead of Shizuru when Anna or Mira started it.
+- **Other fixes.** Enemy info screen pilot labels "Nuke Missile" and "Stray Mach." no longer cut off, with extra checks against the v1.3.2 kind of crash. BGM add-on: no more horizontal line in battle scenes. Counter Settings: blank button now reads "Counter", help lines not clipped. Upgrade screen: "Fund" not clipped, weapon header reads "Atk". Weapon list: stray pink dot removed. Script unchanged from v1.3.2.
+- **Patches:** `SRWL_English_v1.4.html`, 41,035,086 bytes, SHA-256 `f500ab4a98fe537a7efbb2f3be7dacbaeb1d05f304d3e39dc39ffc0614ab463c`; `SRWL_English_v1.4.bps`, 30,762,920 bytes, SHA-256 `2ac84747abf64cf26c985ddc790bbc98c53d77d3ab87cc261b25dbae0ebda4fb`. Patched ROM: 128,465,468 bytes, SHA-1 `b689c17c185e61850a08b9c9300d594c4b5a51e0`, SHA-256 `cc7969fd4e6eeeb39c709d30219a3a89f959b9569f39a0f0fb94022501f0bc08`, CRC32 `59EEF226`.
+- **BGM add-ons (downloaded separately):** `SRWL_English_v1.4_StereoBGM_addon.bps`, 164,731,107 bytes, SHA-256 `f2040026ae62f552d963ff01f027687d4e2084616950b11e1677ed39e404faf1` (result 265,797,184 bytes, SHA-256 `efd428750a6d46b93710955bff859e80cc68e6acb0871c2087315714d386a682`); `SRWL_English_v1.4_MonoBGM_addon.bps`, 94,723,405 bytes, SHA-256 `53cf58a727675e69f6fc385b80843c386b6d6546ab959cc3000bb16ecd952be3` (result 197,139,008 bytes, SHA-256 `04a5eab315b86c012bbad041318070989887e286a9b7f7e4e43a5504178a10d1`). Earlier add-ons don't fit v1.4.
+
 ## v1.3.2 - 2026-11-21
 
 - **Crash fix.** Stage 12 could crash or freeze when the info screen of the ARMA enemy unit was opened. Its pilot's shortened name label was written to the wrong place in the text buffer, so the text renderer ran past its memory. Text and graphics otherwise unchanged from v1.3.1.

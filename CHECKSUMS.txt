@@ -1,17 +1,17 @@
-Super Robot Wars L English v1.3.2
+Super Robot Wars L English v1.4
 
-v1.3.2 fixes a crash in Stage 12 (ARMA enemy unit info screen). Text and graphics are the
-same as v1.3.1. The v1.3.1 BGM add-ons don't fit v1.3.2; use the v1.3.2 add-ons.
+v1.4 fixes several bugs from the original game and a few menu problems. The script is the
+same as v1.3.2. Earlier BGM add-ons don't fit v1.4; use the v1.4 add-ons.
 
 Two patches give the same patched ROM:
-- SRWL_English_v1.3.2.html: offline browser patcher, accepts both clean dumps below.
-- SRWL_English_v1.3.2.bps: standard BPS patch for the canonical-header dump.
+- SRWL_English_v1.4.html: offline browser patcher, accepts both clean dumps below.
+- SRWL_English_v1.4.bps: standard BPS patch for the canonical-header dump.
 Both verified by patching fresh copies of the clean dumps; identical output hash below.
 
 Optional vocal BGM add-ons apply to the patched ROM (use one). The HTML patcher
-can apply one too, from the Japanese ROM or from an already-patched v1.3.2 ROM:
-- SRWL_English_v1.3.2_StereoBGM_addon.bps: stereo vocal BGM.
-- SRWL_English_v1.3.2_MonoBGM_addon.bps: smaller mono fallback.
+can apply one too, from the Japanese ROM or from an already-patched v1.4 ROM:
+- SRWL_English_v1.4_StereoBGM_addon.bps: stereo vocal BGM.
+- SRWL_English_v1.4_MonoBGM_addon.bps: smaller mono fallback.
 
 Clean Japanese ROM (canonical header, not distributed): clean.nds
 Size: 134217728 bytes
@@ -23,40 +23,40 @@ Size: 134217728 bytes
 SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
-HTML patcher: SRWL_English_v1.3.2.html
-Size: 41280379 bytes
-SHA-256: 31cf1f3bbf9c155a965c47699c08a1e24f63b2923c03accb2921263e7cee853f
-CRC32: 1856F0C0
+HTML patcher: SRWL_English_v1.4.html
+Size: 41035086 bytes
+SHA-256: f500ab4a98fe537a7efbb2f3be7dacbaeb1d05f304d3e39dc39ffc0614ab463c
+CRC32: 57EE713F
 
-BPS patch: SRWL_English_v1.3.2.bps
-Size: 30946868 bytes
-SHA-256: eed96d08e6474fb1ebcc33d90e970ee18e8c0ea868f3917239468725af9b4f77
+BPS patch: SRWL_English_v1.4.bps
+Size: 30762920 bytes
+SHA-256: 2ac84747abf64cf26c985ddc790bbc98c53d77d3ab87cc261b25dbae0ebda4fb
 CRC32: 2144DF1C
 
-Stereo BGM add-on: SRWL_English_v1.3.2_StereoBGM_addon.bps
-Size: 163746754 bytes
-SHA-256: 394eaa0bbefd99c0ec91483859c548ea705d5a30fbd26e6164a046bfce5ddd27
+Stereo BGM add-on: SRWL_English_v1.4_StereoBGM_addon.bps
+Size: 164731107 bytes
+SHA-256: f2040026ae62f552d963ff01f027687d4e2084616950b11e1677ed39e404faf1
 CRC32: 2144DF1C
 
-Mono BGM add-on: SRWL_English_v1.3.2_MonoBGM_addon.bps
-Size: 93739020 bytes
-SHA-256: 6bf61b94506b2895dcb75b2f0b65bfda9d5d424346df03a16c7c0b80c1f2ddf2
+Mono BGM add-on: SRWL_English_v1.4_MonoBGM_addon.bps
+Size: 94723405 bytes
+SHA-256: 53cf58a727675e69f6fc385b80843c386b6d6546ab959cc3000bb16ecd952be3
 CRC32: 2144DF1C
 
-Patched ROM (not distributed): SRWL_English_v1.3.2.nds
+Patched ROM (not distributed): SRWL_English_v1.4.nds
 Size: 128465468 bytes
-SHA-1: 4b39867136cec8bf37fe594bdd01f9b2cd66e901
-SHA-256: d727da13ebe78a9da22ff3e4f8584565f406218e5eac579675032e60cea09797
-CRC32: 53E9E761
+SHA-1: b689c17c185e61850a08b9c9300d594c4b5a51e0
+SHA-256: cc7969fd4e6eeeb39c709d30219a3a89f959b9569f39a0f0fb94022501f0bc08
+CRC32: 59EEF226
 
-Patched ROM with stereo BGM add-on (not distributed): SRWL_English_v1.3.2_StereoBGM.nds
+Patched ROM with stereo BGM add-on (not distributed): SRWL_English_v1.4_StereoBGM.nds
 Size: 265797184 bytes
-SHA-1: 962cf6820a3faf90a5b5592d8f46e3e1904d121b
-SHA-256: 4c1bdcf5cd12fc1695b38ba0a5da47c6c7c173f8027cb78e57610687777569b3
-CRC32: 3DC50517
+SHA-1: b346ff4ce31053719257a03914640e913b3cafbd
+SHA-256: efd428750a6d46b93710955bff859e80cc68e6acb0871c2087315714d386a682
+CRC32: 3297E962
 
-Patched ROM with mono BGM add-on (not distributed): SRWL_English_v1.3.2_MonoBGM.nds
+Patched ROM with mono BGM add-on (not distributed): SRWL_English_v1.4_MonoBGM.nds
 Size: 197139008 bytes
-SHA-1: e72331b2004f49df04e189d137eb3c68706227e2
-SHA-256: 9f7646da0e9bbb83836bb398c246f5ccec7156c4b27fe5dfc85e255634963858
-CRC32: 4D8FF599
+SHA-1: 7cd44fdf2961d3f1cbd5ca0ace49ecaa561e48f6
+SHA-256: 04a5eab315b86c012bbad041318070989887e286a9b7f7e4e43a5504178a10d1
+CRC32: 537340E2

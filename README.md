@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v1.3.2
+# Super Robot Taisen L -- English v1.4
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. Only patches are distributed; you supply your own clean Japanese ROM.
 
@@ -25,6 +25,9 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 | ![Meyrin on the Minerva bridge](screenshots/v12-story-minerva.png) | ![Canaria's battle cry](screenshots/v12-battle-quote.png) |
 | ![Weapon selection for Dancouga Nova](screenshots/weapon-selection.png) | ![Quatre's support attack](screenshots/v12-support-attack.png) |
 
+## What's new in v1.4
+Bug fixes and small menu fixes; the script is the same as v1.3.2. Fixed bugs from the original game: Aoi's A.Combo level on maps, the Great Booster's ammo with B-Save, Spirits staying active after a support attack, Combo attacks started from the target list, and the Dannar Combination cut-in showing Goh instead of Shizuru. Also: enemy info screen labels, a horizontal line in battle with the BGM add-on, the Counter Settings button and help text, Upgrade screen labels, and a stray dot in the weapon list. Full list in the [v1.4 release notes](release_docs/RELEASE_v1.4.md). Re-patch from your Japanese ROM; your saves keep working. If you use a BGM add-on, use the v1.4 add-on (earlier add-ons don't fit v1.4).
+
 ## What's new in v1.3.2
 Fixes a crash in Stage 12: opening the info screen of the ARMA enemy unit (where its pilot's name is shortened to fit) could freeze or crash the game. Text and graphics are otherwise the same as v1.3.1. Re-patch from your Japanese ROM; your saves keep working. If you use a BGM add-on, use the v1.3.2 add-on (the v1.3.1 add-ons don't fit v1.3.2).
 
@@ -37,12 +40,12 @@ A dialogue and presentation pass: about 185 lines corrected for meaning and 380 
 ## How to patch
 You need a clean Japanese ROM of the game (BRWJ, revision 0).
 
-1. Download `SRWL_English_v1.3.2.html` from the [v1.3.2 release](https://github.com/jignx/SRWL-English/releases/tag/v1.3.2).
-2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.3.2.nds`.
+1. Download `SRWL_English_v1.4.html` from the [v1.4 release](https://github.com/jignx/SRWL-English/releases/tag/v1.4).
+2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.4.nds`.
 
-Prefer your own patcher? Apply `SRWL_English_v1.3.2.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
+Prefer your own patcher? Apply `SRWL_English_v1.4.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
 
-Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.3.2_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.3.2_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.3.2.nds`. Flips works too. The add-on files are downloaded separately from the GitHub release; download links will be added here shortly. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
+Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.4_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.4_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.4.nds`. Flips works too. The add-on files are downloaded separately from the GitHub release; download links will be added here shortly. The ROM grows to about 266 MB (stereo) or 197 MB (mono).
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 

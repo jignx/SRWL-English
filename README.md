@@ -1,4 +1,4 @@
-# Super Robot Taisen L -- English v1.4
+# Super Robot Taisen L -- English v1.5
 
 An unofficial English fan translation for **Super Robot Taisen L** on Nintendo DS. Only patches are distributed; you supply your own clean Japanese ROM.
 
@@ -25,6 +25,9 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 | ![Meyrin on the Minerva bridge](screenshots/v12-story-minerva.png) | ![Canaria's battle cry](screenshots/v12-battle-quote.png) |
 | ![Weapon selection for Dancouga Nova](screenshots/weapon-selection.png) | ![Quatre's support attack](screenshots/v12-support-attack.png) |
 
+## What's new in v1.5
+Pilot-screen and menu fixes, plus another pass over names and story text. Spirit and Skill names that were blank on pilot screens now show; HIT labels, menu clipping and the Rei and Rey name plates are fixed; Chang Wufei, honorifics, Dancouga Nova attack names, Crow's Machine Gun, Roo Riruri and a round of typos and terms are corrected; story lines break more smoothly; battle text fitting is safer. Full list in the [v1.5 release notes](release_docs/RELEASE_v1.5.md). Re-patch from your Japanese ROM; your saves keep working. There is no v1.5 BGM add-on yet, and earlier add-ons don't fit v1.5.
+
 ## What's new in v1.4
 Bug fixes and small menu fixes; the script is the same as v1.3.2. Fixed bugs from the original game: Aoi's A.Combo level on maps, the Great Booster's ammo with B-Save, Spirits staying active after a support attack, Combo attacks started from the target list, and the Dannar Combination cut-in showing Goh instead of Shizuru. Also: enemy info screen labels, a horizontal line in battle with the BGM add-on, the Counter Settings button and help text, Upgrade screen labels, and a stray dot in the weapon list. Full list in the [v1.4 release notes](release_docs/RELEASE_v1.4.md). Re-patch from your Japanese ROM; your saves keep working. If you use a BGM add-on, use the v1.4 add-on (earlier add-ons don't fit v1.4).
 
@@ -40,17 +43,12 @@ A dialogue and presentation pass: about 185 lines corrected for meaning and 380 
 ## How to patch
 You need a clean Japanese ROM of the game (BRWJ, revision 0).
 
-1. Download `SRWL_English_v1.4.html` from the [v1.4 release](https://github.com/jignx/SRWL-English/releases/tag/v1.4).
-2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.4.nds`.
+1. Download `SRWL_English_v1.5.html` from the [v1.5 release](https://github.com/jignx/SRWL-English/releases/tag/v1.5).
+2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.5.nds`.
 
-Prefer your own patcher? Apply `SRWL_English_v1.4.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
+Prefer your own patcher? Apply `SRWL_English_v1.5.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
 
-Optional vocal BGM: in the HTML patcher, also pick `SRWL_English_v1.4_StereoBGM_addon.bps` (or the smaller `SRWL_English_v1.4_MonoBGM_addon.bps`) and it builds the BGM ROM in one go. It also works on an already-patched `SRWL_English_v1.4.nds`. Flips works too. The add-on files are downloaded separately from the GitHub release (links below). The ROM grows to about 266 MB (stereo) or 197 MB (mono).
-
-Mirror downloads for the v1.4 BGM add-ons:
-
-- Stereo: [Gofile](https://gofile.io/d/fdHC3rB8) · [1fichier](https://1fichier.com/?7dc46khps1cskb7unzoe) · [MEGA](https://mega.nz/file/DfphyLjS#5h93ZXpTBrfJTXP1d7G4oqPPgDFWRcCOsCw4EJxKOhk)
-- Mono: [Gofile](https://gofile.io/d/KuRgBefu) · [1fichier](https://1fichier.com/?6l4xw2s40hs1pe9ufoxn) · [MEGA](https://mega.nz/file/KOBEyazY#6Ckc5Xhla47knCPnzYqN7zj1XPxvIubOwl6Q3s7eCbQ)
+Optional vocal BGM: there is no v1.5 BGM add-on yet. Earlier add-ons don't fit v1.5; use v1.4 if you want the BGM add-on for now.
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 

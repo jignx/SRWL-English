@@ -4,6 +4,13 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
+## v1.5 - 2026-11-25
+
+- **Screens.** Blank or cut-off Spirit and Skill names on pilot screens fixed; HIT label on stat and weapon lists; menu labels no longer blank or clipped; Rei and Rey name plates fixed.
+- **Text.** Chang Wufei name order, honorifics removed, official Dancouga Nova attack names, Crow's Machine Gun, Roo Riruri, typo and term fixes, smoother story line breaks, safer battle text fitting.
+- **Patches:** `SRWL_English_v1.5.html`, 134,217,728 bytes, SHA-256 `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f`; `SRWL_English_v1.5.bps`, 134,217,728 bytes, SHA-256 `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`. Patched ROM: 128,465,980 bytes, SHA-1 `3fb18fe8422812f11c0b90e30b0c038876b49278`, SHA-256 `61f7c3102d3110471bc56b66a4aa941f90966a9a6704be6cda756df869b26467`, CRC32 `A9B5A749`.
+- **BGM add-ons:** none for v1.5 yet. Earlier add-ons don't fit v1.5.
+
 ## v1.4 - 2026-11-21
 
 - **Original-game bugs fixed.** Aoi Hidaka's A.Combo was one level low on maps (never reached level 3). The Great Booster showed 4/6 instead of 6/6 with B-Save on the Great Mazinger and lost shots. Soul, Hot Blood, Direct Hit, Mercy, Luck and Effort stayed active after boosting a support attack. Pressing X on a Combo weapon's target list could start a battle that hit nothing or froze. The Dannar Combination cut-in showed Goh instead of Shizuru when Anna or Mira started it.

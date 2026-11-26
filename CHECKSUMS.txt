@@ -1,12 +1,14 @@
 Super Robot Wars L English v1.5
 
-v1.5 fixes pilot-screen and menu problems and adds another name and story text pass.
-Earlier BGM add-ons don't fit v1.5; there is no v1.5 add-on yet.
+v1.5 adds the NDS12 dialogue font, pilot-screen and menu fixes, UI/unit-name polish, another name and story text pass, universal forward-compatible .bgmpak BGM packs, and a built-in Custom BGM Maker tab in the HTML patcher.
 
-Two patches give the same patched ROM:
-- SRWL_English_v1.5.html: offline browser patcher, accepts both clean dumps below.
+Two patches give the same patched ROM (hosted on GitHub):
+- SRWL_English_v1.5.html: offline browser patcher (includes the built-in Custom BGM Maker tab), accepts both clean dumps below.
 - SRWL_English_v1.5.bps: standard BPS patch for the canonical-header dump.
 Both verified by patching fresh copies of the clean dumps; identical output hash below.
+
+Optional universal vocal BGM packs (hosted on external mirrors; forward-compatible with clean JP, v1.3-v1.5, and future releases):
+- SRWL_StereoBGM.bgmpak / SRWL_MonoBGM.bgmpak: apply inside SRWL_English_v1.5.html (or via tools/bgm_pack.py).
 
 Clean Japanese ROM (canonical header, not distributed): clean.nds
 Size: 134217728 bytes
@@ -19,17 +21,39 @@ SHA-256: 1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f
 CRC32: 82804748
 
 HTML patcher: SRWL_English_v1.5.html
-Size: 6056746 bytes
-SHA-256: e6c701ae679058c2aef2f5167c6a0577f156305bd36fa9a8b5bfe6c4c5d1fe03
-CRC32: 6060FD0E
+Size: 6201674 bytes
+SHA-256: dccb0f10a40ea3c15388b4335921a16d0a4992f51b7324727764e34d7ec83c4a
+CRC32: CD4E3E73
 
 BPS patch: SRWL_English_v1.5.bps
-Size: 4529614 bytes
-SHA-256: 10432f9d4fdcdccf5dc57daaac82a44de0555d331600fb4ff6b9c99a35bd8524
+Size: 4506648 bytes
+SHA-256: 39ae147b355bfa096475b5af96a4515789d80537fdb2760e216434d614c72fbf
+CRC32: 2144DF1C
+
+Universal Stereo BGM pack (external download): SRWL_StereoBGM.bgmpak
+Size: 137320032 bytes
+SHA-256: 59045208829ea20fe90fc214c431e1581bb4c4c6f095f28907d97b962c7e419b
+CRC32: 2144DF1C
+
+Universal Mono BGM pack (external download): SRWL_MonoBGM.bgmpak
+Size: 68661948 bytes
+SHA-256: 9d8fc0e804f1f03c961df3ace50d4e647d9c556718024c789e00a1d9b16d946f
 CRC32: 2144DF1C
 
 Patched ROM (not distributed): SRWL_English_v1.5.nds
-Size: 128465980 bytes
-SHA-1: 3fb18fe8422812f11c0b90e30b0c038876b49278
-SHA-256: 61f7c3102d3110471bc56b66a4aa941f90966a9a6704be6cda756df869b26467
-CRC32: A9B5A749
+Size: 128458300 bytes
+SHA-1: 7ded20564031e737220ed54d3f1ecd467db83631
+SHA-256: d716d4ac3bfea78c715696547a047258650814c262e0dabb1ad03f76d27c90f9
+CRC32: 41007E45
+
+Patched ROM with Stereo BGM pack (not distributed): SRWL_English_v1.5_StereoBGM.nds
+Size: 291746624 bytes
+SHA-1: 84046a916257c7f2b1320caf741336a33448d63b
+SHA-256: 79a3ccf0e584ded96117061d51bbc44df8ac604383587513e4c73c2ab452a069
+CRC32: 1723A4ED
+
+Patched ROM with Mono BGM pack (not distributed): SRWL_English_v1.5_MonoBGM.nds
+Size: 223088320 bytes
+SHA-1: 0d5e238bfc2280194b9b0e8b9623906028d223cf
+SHA-256: b8ef3d872b1354bc1ac8dd289dca73e08a4bae42ca495cc92b9c40d92b9c78a6
+CRC32: 1B7B2A46

@@ -13,8 +13,9 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 - Translation has been checked to consistently keep within each series setting, lore and personality to ensure that the writing consistently captured the personality of the characters in the game.
 - Official English name spellings for series, characters and mechs where they exist using Akurasu, Fansubs and Wiki as a source
 - Terms familiar from other official SRW games like VTX30Y: Will, Valor, Spirit, CQB / RNG / SKL
-- A narrower font in story scenes and battle quotes, so lines keep their full meaning
+- An NDS12 BIOS-style dialogue font in story scenes and battle quotes, so lines keep their full meaning
 - Menus fitted to the screen, plus translated graphics: title screen, terrain icons, battle badges and pop-ups
+- Optional forward-compatible `.bgmpak` vocal BGM packs and an offline **Custom BGM Maker** built into the HTML patcher
 - Anti-piracy checks disabled; JIT/dynarec works on melonDS Android and WatermelonDS
 
 ## Screenshots
@@ -26,7 +27,7 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 | ![Weapon selection for Dancouga Nova](screenshots/weapon-selection.png) | ![Quatre's support attack](screenshots/v12-support-attack.png) |
 
 ## What's new in v1.5
-Pilot-screen and menu fixes, plus another pass over names and story text. Spirit and Skill names that were blank on pilot screens now show; HIT labels, menu clipping and the Rei and Rey name plates are fixed; Chang Wufei, honorifics, Dancouga Nova attack names, Crow's Machine Gun, Roo Riruri and a round of typos and terms are corrected; story lines break more smoothly; battle text fitting is safer. Full list in the [v1.5 release notes](release_docs/RELEASE_v1.5.md). Re-patch from your Japanese ROM; your saves keep working. There is no v1.5 BGM add-on yet, and earlier add-ons don't fit v1.5.
+NDS12 dialogue font, pilot-screen and menu fixes, UI/unit-name consistency (`Blaze/Gunner ZAKU W`, `Blaze/Slash ZAKU P`, `VF-25F/G` & `RVF-25` Super/Armored packs, `Zaul Geyser`, `Ignore` → `Barrier`/`Size`, `HIT Down L2` spacing, Level Up Spirit column alignment), plus another pass over names and story text. Now supports **forward-compatible universal `.bgmpak` vocal BGM packs** and a built-in **Custom BGM Maker** tab in `SRWL_English_v1.5.html` to add your own music and edit in-game song titles. Full list in the [v1.5 release notes](release_docs/RELEASE_v1.5.md). Re-patch from your Japanese ROM; your saves keep working.
 
 ## What's new in v1.4
 Bug fixes and small menu fixes; the script is the same as v1.3.2. Fixed bugs from the original game: Aoi's A.Combo level on maps, the Great Booster's ammo with B-Save, Spirits staying active after a support attack, Combo attacks started from the target list, and the Dannar Combination cut-in showing Goh instead of Shizuru. Also: enemy info screen labels, a horizontal line in battle with the BGM add-on, the Counter Settings button and help text, Upgrade screen labels, and a stray dot in the weapon list. Full list in the [v1.4 release notes](release_docs/RELEASE_v1.4.md). Re-patch from your Japanese ROM; your saves keep working. If you use a BGM add-on, use the v1.4 add-on (earlier add-ons don't fit v1.4).
@@ -41,21 +42,33 @@ Fixes a freeze on the Saving screen when using the Stereo or Mono BGM add-on; th
 A dialogue and presentation pass: about 185 lines corrected for meaning and 380 polished for flow, full names on maps and area titles, and Mission Objectives that name the pilot they need. New: an optional vocal BGM add-on (stereo, with a mono fallback). Older changes are in the [changelog](release_docs/CHANGELOG.md).
 
 ## How to patch
-You need a clean Japanese ROM of the game (BRWJ, revision 0).
+You need a clean Japanese ROM of the game (BRWJ, revision 0). Only `SRWL_English_v1.5.html`, `SRWL_English_v1.5.bps`, and `CHECKSUMS.txt` are hosted on GitHub.
 
 1. Download `SRWL_English_v1.5.html` from the [v1.5 release](https://github.com/jignx/SRWL-English/releases/tag/v1.5).
 2. Open it in your browser (works offline, nothing is uploaded), choose your ROM, and it saves `SRWL_English_v1.5.nds`.
 
 Prefer your own patcher? Apply `SRWL_English_v1.5.bps` with Flips and check the result against `CHECKSUMS.txt`. Dump hashes are in [HEADER_COMPATIBILITY.md](release_docs/HEADER_COMPATIBILITY.md).
 
-Optional vocal BGM: there is no v1.5 BGM add-on yet. Earlier add-ons don't fit v1.5; use v1.4 if you want the BGM add-on for now.
+### Optional Vocal BGM Packs (Forward-Compatible `.bgmpak`)
+To avoid copyright issues on GitHub, the vocal BGM packs are hosted on external mirrors as universal **`.bgmpak`** files. Because `.bgmpak` packs contain no base-ROM SDAT data or hardcoded translation offsets, **one pack works on clean Japanese SRW L, v1.3–v1.5, and future English updates** — you don't need to re-download it for future releases.
+
+- **Stereo (`SRWL_StereoBGM.bgmpak`, recommended):** [Gofile](https://gofile.io/d/d8DkQTtJ) · [1fichier](https://1fichier.com/?75b2mtft24n9gxevm0ve) · [MEGA](https://mega.nz/file/eaBHhLQA#OPyZcIG3Bji9HfDd60e6qmsbjVbPl52-mE3_Ct9MChc)
+- **Mono (`SRWL_MonoBGM.bgmpak`, smaller size):** [Gofile](https://gofile.io/d/rPVRdloF) · [1fichier](https://1fichier.com/?hsucl54q9puhqog2s9k9) · [MEGA](https://mega.nz/file/ee5kxJjK#iSNmuWw-EvII8u_mepwMupipWJqoqgPncCb3VjtD6wI)
+
+To apply: open `SRWL_English_v1.5.html`, load your clean Japanese ROM (or an already-patched English ROM), select your `.bgmpak` file in the optional BGM section, and click patch.
+
+### How to Add Custom Music & Edit Song Titles
+Open `SRWL_English_v1.5.html` and click the **Custom BGM Maker** tab (100% offline in your browser):
+1. Load your clean Japanese ROM or patched `SRWL_English_v1.5.nds` (and optionally a `.bgmpak` as a base).
+2. Choose a BGM slot, drop in your audio file (`.mp3`, `.wav`, `.ogg`, `.flac`, etc.), pick Stereo or Mono, adjust volume/looping, and edit the **in-game song title**.
+3. Export a patched `.nds` ROM directly, or save a reusable `.bgmpak` pack for future versions.
 
 Start fresh or load a normal in-game save. Old emulator savestates won't work.
 
 No pre-patched ROMs, please don't ask.
 
 ## Compatibility
-Tested on New 3DS, Ace3DS+ Wood, SuperCard and DSpico, plus DeSmuME and melonDS. The stereo BGM add-on was tested on 3DS.
+Tested on New 3DS, Ace3DS+ Wood, SuperCard and DSpico, plus DeSmuME and melonDS. The stereo BGM pack was tested on 3DS. On Android, **melonDS** is recommended (DraStic has an emulator bug that makes SRW L's world map screen appear very dark, even on the unpatched Japanese ROM).
 
 ## Report a bug
 Open an issue with the version, emulator or hardware, what happened and how to repeat it, and a screenshot if you can. A save near the problem helps a lot. See [PLAYTESTING.md](release_docs/PLAYTESTING.md). Please don't upload ROMs.
@@ -63,7 +76,7 @@ Open an issue with the version, emulator or hardware, what happened and how to r
 ## Credits
 - Translation and testing: Jignx, with AI help from ChatGPT (Codex), Claude and DeepSeek. Every change was checked in-game by hand.
 - Terminology reference: Akurasu
-- Fonts: GohuFont by Hugo Chargois (WTFPL), adapted to a proportional font; Roboto Condensed by the Roboto Project Authors (SIL OFL 1.1)
+- Fonts: NDS12 by Caveras; GohuFont by Hugo Chargois (WTFPL), adapted to a proportional font; Roboto Condensed by the Roboto Project Authors (SIL OFL 1.1)
 - Tools: DeSmuME, xdelta, BPS
 
 Super Robot Taisen L and all its characters, art and music belong to their respective rights holders. This project isn't affiliated with or endorsed by them. Please don't share ROMs or pre-patched games.

@@ -4,12 +4,12 @@ Release packets are cumulative: each one contains every earlier text and engine
 change unless the entry says otherwise. Only the versions listed here as releases
 were handed out; the other builds were private test builds.
 
-## v1.5 - 2026-11-25
+## v1.5 - 2026-11-26
 
-- **Screens.** Blank or cut-off Spirit and Skill names on pilot screens fixed; HIT label on stat and weapon lists; menu labels no longer blank or clipped; Rei and Rey name plates fixed.
-- **Text.** Chang Wufei name order, honorifics removed, official Dancouga Nova attack names, Crow's Machine Gun, Roo Riruri, typo and term fixes, smoother story line breaks, safer battle text fitting.
-- **Patches:** `SRWL_English_v1.5.html`, 134,217,728 bytes, SHA-256 `1bc8e2e0c3bc93eb10bcc189c829ee028590aa48b7f2e7cdb3a5723ee071f37f`; `SRWL_English_v1.5.bps`, 134,217,728 bytes, SHA-256 `a2b666a294df476688ea40e37b9ef53ed609a65bd4a14013ba730057247d594f`. Patched ROM: 128,465,980 bytes, SHA-1 `3fb18fe8422812f11c0b90e30b0c038876b49278`, SHA-256 `61f7c3102d3110471bc56b66a4aa941f90966a9a6704be6cda756df869b26467`, CRC32 `A9B5A749`.
-- **BGM add-ons:** none for v1.5 yet. Earlier add-ons don't fit v1.5.
+- **Font & Screens.** Dialogue Font B switched to NDS12 (Nintendo DS BIOS style, baseline-aligned `;` and `:`) with full story/battle reflow; blank or cut-off Spirit/Skill names fixed; Level Up 3-column Spirit alignment fixed; `HIT` / `ACC` / `EVD`, `Ignore` (`Barrier` / `Size`), `HIT Down L2` spacing, `Infight`/`Gunfight`/`S. Attack`/`S. Defend`, `Wall`/`Guard`, `Status Immunity`, menu labels, and `Rei`/`Rey` plates fixed.
+- **Text & Names.** Uniform ZAKU (`Blaze/Gunner ZAKU W`, `Blaze/Slash ZAKU P`) and Macross VF-25/RVF-25 pack names (`Super F/B`, `Armored F/B`), Gaiking's `Zaul Geyser`, `Chang Wufei`, honorifics removed, official Dancouga Nova attack names, Crow's Machine Gun, Roo Riruri, typo/term fixes, smoother story line breaks, safer battle text fitting.
+- **Patches (GitHub):** `SRWL_English_v1.5.html` (6,201,674 bytes, SHA-256 `dccb0f10a40ea3c15388b4335921a16d0a4992f51b7324727764e34d7ec83c4a`, includes built-in Custom BGM Maker tab); `SRWL_English_v1.5.bps` (4,506,648 bytes, SHA-256 `39ae147b355bfa096475b5af96a4515789d80537fdb2760e216434d614c72fbf`). Patched ROM: 128,458,300 bytes, SHA-1 `7ded20564031e737220ed54d3f1ecd467db83631`, SHA-256 `d716d4ac3bfea78c715696547a047258650814c262e0dabb1ad03f76d27c90f9`, CRC32 `41007E45`.
+- **Universal `.bgmpak` BGM packs (forward-compatible, external mirrors):** `SRWL_StereoBGM.bgmpak` (137,320,032 bytes, SHA-256 `59045208829ea20fe90fc214c431e1581bb4c4c6f095f28907d97b962c7e419b`) — [Gofile](https://gofile.io/d/d8DkQTtJ) · [1fichier](https://1fichier.com/?75b2mtft24n9gxevm0ve) · [MEGA](https://mega.nz/file/eaBHhLQA#OPyZcIG3Bji9HfDd60e6qmsbjVbPl52-mE3_Ct9MChc); `SRWL_MonoBGM.bgmpak` (68,661,948 bytes, SHA-256 `9d8fc0e804f1f03c961df3ace50d4e647d9c556718024c789e00a1d9b16d946f`) — [Gofile](https://gofile.io/d/rPVRdloF) · [1fichier](https://1fichier.com/?hsucl54q9puhqog2s9k9) · [MEGA](https://mega.nz/file/ee5kxJjK#iSNmuWw-EvII8u_mepwMupipWJqoqgPncCb3VjtD6wI).
 
 ## v1.4 - 2026-11-21
 

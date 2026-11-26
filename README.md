@@ -52,8 +52,10 @@ Prefer your own patcher? Apply `SRWL_English_v1.5.bps` with Flips and check the 
 ### Optional Vocal BGM Packs (Forward-Compatible `.bgmpak`)
 To avoid copyright issues on GitHub, the vocal BGM packs are hosted on external mirrors as universal **`.bgmpak`** files. Because `.bgmpak` packs contain no base-ROM SDAT data or hardcoded translation offsets, **one pack works on clean Japanese SRW L, v1.3–v1.5, and future English updates** — you don't need to re-download it for future releases.
 
-- **Stereo (`SRWL_StereoBGM.bgmpak`, recommended):** [Gofile](https://gofile.io/d/d8DkQTtJ) · [1fichier](https://1fichier.com/?75b2mtft24n9gxevm0ve) · [MEGA](https://mega.nz/file/eaBHhLQA#OPyZcIG3Bji9HfDd60e6qmsbjVbPl52-mE3_Ct9MChc)
-- **Mono (`SRWL_MonoBGM.bgmpak`, smaller size):** [Gofile](https://gofile.io/d/rPVRdloF) · [1fichier](https://1fichier.com/?hsucl54q9puhqog2s9k9) · [MEGA](https://mega.nz/file/ee5kxJjK#iSNmuWw-EvII8u_mepwMupipWJqoqgPncCb3VjtD6wI)
+| Pack | Best For | Size | Gofile | 1fichier | MEGA |
+| :--- | :--- | ---: | :---: | :---: | :---: |
+| **Stereo (`SRWL_StereoBGM.bgmpak`)** | Recommended — 3DS, emulators, modern flashcarts | 131 MB | [Download](https://gofile.io/d/d8DkQTtJ) | [Download](https://1fichier.com/?75b2mtft24n9gxevm0ve) | [Download](https://mega.nz/file/eaBHhLQA#OPyZcIG3Bji9HfDd60e6qmsbjVbPl52-mE3_Ct9MChc) |
+| **Mono (`SRWL_MonoBGM.bgmpak`)** | Smaller file size / older flashcarts | 65 MB | [Download](https://gofile.io/d/rPVRdloF) | [Download](https://1fichier.com/?hsucl54q9puhqog2s9k9) | [Download](https://mega.nz/file/ee5kxJjK#iSNmuWw-EvII8u_mepwMupipWJqoqgPncCb3VjtD6wI) |
 
 To apply: open `SRWL_English_v1.5.html`, load your clean Japanese ROM (or an already-patched English ROM), select your `.bgmpak` file in the optional BGM section, and click patch.
 

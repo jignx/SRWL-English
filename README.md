@@ -22,9 +22,10 @@ After playing through it a bit and fixing all the bugs I could spot, I feel like
 
 | | |
 | --- | --- |
-| ![English title screen and main menu](screenshots/title-screen.png) | ![Bobby and Jeffrey on the Macross bridge](screenshots/v12-story-macross.png) |
-| ![Meyrin on the Minerva bridge](screenshots/v12-story-minerva.png) | ![Canaria's battle cry](screenshots/v12-battle-quote.png) |
-| ![Weapon selection for Dancouga Nova](screenshots/weapon-selection.png) | ![Quatre's support attack](screenshots/v12-support-attack.png) |
+| ![English title screen and main menu](screenshots/v15-title-screen.png) | ![Mari in Stage 23 story dialogue (NDS12 font)](screenshots/v15-story-1.png) |
+| ![Kaji in Stage 23 story dialogue (NDS12 font)](screenshots/v15-story-2.png) | ![Unit upgrades screen with HIT stat and roster](screenshots/v15-upgrades.png) |
+| ![Battle forecast: Seventh Angel vs Koenig Monster G and Sandrock Kai](screenshots/v15-battle-forecast.png) | ![Canaria cockpit cut-in and battle quote](screenshots/v15-battle-quote.png) |
+| ![Canaria anime cut-in during battle](screenshots/v15-battle-cutin.png) | ![Seventh Angel AT Field badge and damage readout](screenshots/v15-battle-atfield.png) |
 
 ## What's new in v1.5
 NDS12 dialogue font, pilot-screen and menu fixes, UI/unit-name consistency (`Blaze/Gunner ZAKU W`, `Blaze/Slash ZAKU P`, `VF-25F/G` & `RVF-25` Super/Armored packs, `Zaul Geyser`, `Ignore` → `Barrier`/`Size`, `HIT Down L2` spacing, Level Up Spirit column alignment), plus another pass over names and story text. Now supports **forward-compatible universal `.bgmpak` vocal BGM packs** and a built-in **Custom BGM Maker** tab in `SRWL_English_v1.5.html` to add your own music and edit in-game song titles. Full list in the [v1.5 release notes](release_docs/RELEASE_v1.5.md). Re-patch from your Japanese ROM; your saves keep working.
